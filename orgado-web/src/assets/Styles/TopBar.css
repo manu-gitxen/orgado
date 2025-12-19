@@ -1,0 +1,35 @@
+.contact-info span, .social-icons span {
+    color: #777777;
+    font-size: 15px;
+    margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    
+}
+
+
+.top-bar-1{
+    padding: 7px;
+}
+
+.top-bar-2{
+    background-color: #699c47;
+    color: white;
+    padding: 5px;
+   
+}
+.top-bar-2 h6{
+    font-size: 17px;
+    font-weight: 400;
+}
+.preference-info{
+    color: white;
+
+    
+}
+.top-bar-selects select{
+    background: none;
+    color: white;
+    border: none;
+}
+

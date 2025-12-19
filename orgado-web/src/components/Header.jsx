@@ -2,9 +2,9 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <a className="navbar-brand fw-bold" href="#">ORGADO</a>
+        <a className="navbar-brand fw-bold" href="#"><img src="" alt="" /></a>
         
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
