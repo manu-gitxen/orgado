@@ -1,15 +1,51 @@
 .contact-info span, .social-icons span {
     color: #777777;
-    font-size: 15px;
-    margin-right: 15px;
+    font-size: 16px;
+    
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
     
+    
+}
+.fa-regular, .far {
+    font-family: Font Awesome\ 6 Pro;
+    font-weight: 400;
+}
+
+.contact-info span:hover, .social-icons span:hover{
+    color: #699c47;
+}
+.phone-left {
+  transform: rotate(270deg);
+  font-size: 17px;
+ 
+ margin: 0px 11px 0px 0px;
+
+  
+}
+
+.v-bar-1{
+    color: #e5ddd9;
+    margin: 0px 12px 0px 12px;
+}
+.v-bar-2{
+    color: #78a55a;
+    margin: 0px 12px 0px 12px;
 }
 
 
+
 .top-bar-1{
-    padding: 7px;
+    padding: 07px ;
+}
+.top-bar-2-links a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s;
+}
+.top-bar-2-links a:hover{
+    color: black;
 }
 
 .top-bar-2{
@@ -19,7 +55,7 @@
    
 }
 .top-bar-2 h6{
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
 }
 .preference-info{
@@ -32,4 +68,6 @@
     color: white;
     border: none;
 }
+
+
 
