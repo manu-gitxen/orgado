@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import homeLogo from "../assets/logo/logo2.png";
 import "../assets/Styles/Header.css";
 import { FiChevronDown } from "react-icons/fi";
@@ -6,6 +6,7 @@ import { FiChevronDown } from "react-icons/fi";
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isSticky, setIsSticky] = useState(false);
 
   const toggleNav = () => setNavOpen(!navOpen);
   const closeNav = () => {
@@ -16,127 +17,176 @@ const Header = () => {
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
+  // scroll event 
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      
+      if (offset > 95) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // cleanup listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg py-3">
-      <div className="container-fluid px-2">
-        {/* Logo */}
-        <a className="navbar-brand d-flex align-items-center" href="#">
-          <img src={homeLogo} alt="Orgado" height="40" />
-        </a>
+    <>
+    <header className={`main-header-wrapper ${isSticky ? "sticky-active" : ""}`}>
+      <nav className="navbar navbar-expand-lg py-3">
+        <div className="container-fluid px-2 flex-wrap">
+          {/* logo */}
+          <a className="navbar-brand d-flex align-items-center me-auto me-lg-0" href="#">
+            <img src={homeLogo} alt="Orgado" height="40" />
+          </a>
 
-        {/* Toggle */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={toggleNav}
-          aria-expanded={navOpen}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Nav */}
-        <div className={`navbar-collapse ${navOpen ? "show" : ""}`}>
-          <ul className="navbar-nav gap-lg-5">
-            {/* Home */}
-            <li className={`nav-item dropdown ${openDropdown === "home" ? "open" : ""}`}>
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleDropdown("home");
-                }}
-              >
-                Home <FiChevronDown className="dropdown-icon" />
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 1</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 2</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 3</a></li>
-              </ul>
-            </li>
-
-            {/* Shop */}
-            <li className={`nav-item dropdown ${openDropdown === "shop" ? "open" : ""}`}>
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleDropdown("shop");
-                }}
-              >
-                Shop <FiChevronDown className="dropdown-icon" />
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Shop Grid</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Shop List</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Product Details</a></li>
-              </ul>
-            </li>
-
-            {/* Pages */}
-            <li className={`nav-item dropdown ${openDropdown === "pages" ? "open" : ""}`}>
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleDropdown("pages");
-                }}
-              >
-                Pages <FiChevronDown className="dropdown-icon" />
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>About Us</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Cart</a></li>
-                <li><a className="dropdown-item" href="#" onClick={closeNav}>Checkout</a></li>
-              </ul>
-            </li>
-
-            {/* Simple links */}
-<li className="nav-item">
-              <a className="nav-link  dropdown-toggle" href="#">
-                Blog
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link  dropdown-toggle" href="#">
-                Contact
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link  dropdown-toggle" href="#">
-                Track Order
-              </a>
-            </li>
-          </ul>
-
-          {/* Right side (desktop only for now) */}
-          <div className="d-lg-flex d-none align-items-center gap-3">
-            <div className="search-box position-relative">
-              <input type="text" placeholder="Search products..." />
+          {/*  search box 576px and 991px */}
+          <div className="d-none d-sm-block d-lg-none mx-auto">
+            <div className="search-box position-relative" style={{ width: '240px' }}>
+              <input type="text" placeholder="Search..." />
               <i className="bi bi-search search-icon"></i>
             </div>
+          </div>
 
-            <div className="icon-box position-relative">
-              <i className="bi bi-bag"></i>
-              <span className="badge">0</span>
-            </div>
-
+          {/*  mobile Icons and toggler  < 992px*/}
+          <div className="d-flex d-lg-none align-items-center gap-2">
+            
+            {/* wishlist on < 992px */}
             <div className="icon-box position-relative">
               <i className="bi bi-heart"></i>
               <span className="badge">0</span>
             </div>
 
-            <div className="icon-box">
-              <i className="bi bi-person"></i>
+            {/* cart on <992px */}
+            <div className="icon-box position-relative">
+              <i className="bi bi-bag"></i>
+              <span className="badge">0</span>
+            </div>
+            
+            {/*toggle menu */}
+            <button
+              className="navbar-toggler"
+              type="button"
+              onClick={toggleNav}
+              aria-expanded={navOpen}
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          {/* nav menu */}
+          <div className={`navbar-collapse ${navOpen ? "show" : ""}`}>
+            <ul className="navbar-nav ">
+              {/* home */}
+              <li className={`nav-item dropdown ${openDropdown === "home" ? "open" : ""}`}>
+                <a
+                  href="#"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleDropdown("home");
+                  }}
+                >
+                  Home <FiChevronDown className="dropdown-icon" />
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 1</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 2</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Home 3</a></li>
+                </ul>
+              </li>
+
+              {/* shop */}
+              <li className={`nav-item dropdown ${openDropdown === "shop" ? "open" : ""}`}>
+                <a
+                  href="#"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleDropdown("shop");
+                  }}
+                >
+                  Shop <FiChevronDown className="dropdown-icon" />
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Shop Grid</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Shop List</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Product Details</a></li>
+                </ul>
+              </li>
+
+              {/* pages */}
+              <li className={`nav-item dropdown ${openDropdown === "pages" ? "open" : ""}`}>
+                <a
+                  href="#"
+                  className="nav-link dropdown-toggle"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleDropdown("pages");
+                  }}
+                >
+                  Pages <FiChevronDown className="dropdown-icon" />
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>About Us</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Cart</a></li>
+                  <li><a className="dropdown-item" href="#" onClick={closeNav}>Checkout</a></li>
+                </ul>
+              </li>
+
+              {/*blog contact and track order nav links  */}
+              <li className="nav-item">
+                <a className="nav-link dropdown-toggle" href="#">Blog</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link dropdown-toggle" href="#">Contact</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link dropdown-toggle" href="#">Track Order</a>
+              </li>
+            </ul>
+
+            {/*  Icons  >992px */}
+            <div className="d-lg-flex d-none align-items-center gap-3">
+              <div className="search-box position-relative">
+                <input type="text" placeholder="Search products..." />
+                <i className="bi bi-search search-icon"></i>
+              </div>
+
+              <div className="icon-box position-relative">
+                <i className="bi bi-bag"></i>
+                <span className="badge">0</span>
+              </div>
+
+              <div className="icon-box position-relative">
+                <i className="bi bi-heart"></i>
+                <span className="badge">0</span>
+              </div>
+
+              <div className="icon-box">
+                <i className="bi bi-person"></i>
+              </div>
             </div>
           </div>
         </div>
+      </nav>
+
+      {/* search row < 576px) */}
+      <div className="container-fluid d-block d-sm-none pb-3 px-3 bg-white">
+        <div className="search-box position-relative w-100 m-0 ">
+          <input type="text" placeholder="Search products..." className="w-100 input-576" />
+          <i className="bi bi-search search-icon"></i>
+        </div>
       </div>
-    </nav>
+      </header>
+    </>
   );
 };
 

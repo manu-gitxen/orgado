@@ -6,7 +6,7 @@ import '../assets/Styles/TopBar.css'
 const TopBar = () => {
   return (
     <div className="top-box ">
-      <div className="container-fluid d-flex justify-content-between top-bar-1"> 
+      <div className="container-fluid  justify-content-between top-bar-1"> 
       
         <div className="contact-info d-flex">
             <a href='tel:+02587898250'><span className='' ><FiPhone className="phone-left" /> +(02) 587 - 898 -250</span></a>

@@ -38,6 +38,7 @@
 
 .top-bar-1{
     padding: 07px ;
+    display: flex;
 }
 .top-bar-2-links a{
     text-decoration: none;
@@ -67,6 +68,18 @@
     background: none;
     color: white;
     border: none;
+}
+
+@media (max-width:634px){
+    .top-bar-1{
+        display: none !important;
+    }
+}
+
+@media (max-width:465px){
+    .top-bar-2{
+        display: none !important;
+    }
 }
 
 
