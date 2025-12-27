@@ -177,12 +177,12 @@
     width: 100%;
     z-index: 1030;
     background-color: #fff; 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 
 .main-header-wrapper.sticky-active {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
@@ -194,14 +194,14 @@
      background-color: #fff;
 }
 
-@keyframes slideDown {
+/* @keyframes slideDown {
     from {
         transform: translateY(-50%);
     }
     to {
         transform: translateY(0);
     }
-}
+} */
 
 
 

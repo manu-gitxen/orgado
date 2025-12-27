@@ -1,0 +1,190 @@
+.hero-section {
+ padding-top: 50px;
+  background-color: #f8f8f8; /* Light grey background */
+  position: relative;
+
+}
+.container-for-hero{
+  margin-left: 4rem;
+ 
+}
+
+
+
+.hero-title {
+  color: #1a1a1a;
+  font-weight: 900; 
+  line-height: 1.1;
+  font-size: 8.11rem !important; 
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+
+.hero-desc {
+  color: #555;
+  font-weight: 400 !important;
+  max-width: 480px;
+  font-size: 1rem !important;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* --- Buttons --- */
+.btn-success {
+  background-color: #6aa84f !important;
+  border: none !important;
+  transition: all 0.3s ease;
+  padding: 16px 45px; /* Larger pill button */
+  font-size: 1.1rem;
+}
+
+.btn-success:hover {
+  background-color: #5a9242;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(106, 168, 79, 0.4);
+}
+
+/* --- DECORATIONS --- */
+
+/* 1. Leaves above "Organic" */
+.hero-leaf-top {
+  position: absolute;
+  top: -80px; /* Adjust based on your leaf image size */
+  left: 200px;
+  width: 70px;
+  animation: floatLeaf 4s ease-in-out infinite alternate;
+}
+
+/* 2. Curly Arrow */
+.hero-curly-arrow {
+  width: 50px; /* Adjust size */
+  opacity: 0.7;
+  animation: wiggleArrow 2s ease-in-out infinite;
+}
+
+/* 3. Berry Bottom Left */
+.hero-berry-wrapper {
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+
+  z-index: 1;
+
+}
+.hero-berry {
+  max-width: 120px;
+
+  animation: slideUp 1.5s ease-out;
+}
+
+/* 4. 50% OFF Badge (Complex Positioning) */
+.discount-badge-wrapper {
+  position: absolute;
+  top: 5%;
+  right:10%;
+  width: 110px; /* Adjust to fit your shape image */
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  /* Floating animation */
+  animation: floatBadge 5s ease-in-out infinite;
+}
+
+.offer-shape-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.discount-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  line-height: 1;
+  color: #6aa84f
+  
+  
+}
+
+.discount-text .percent {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Jost', sans-serif; /* Or your main font */
+}
+
+.discount-text .off {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+/* --- Animations --- */
+@keyframes floatLeaf {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(10deg); }
+}
+
+@keyframes wiggleArrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px) rotate(5deg); }
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  .hero-content {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-desc {
+    margin: 0 auto 30px;
+  }
+  .hero-btn-group {
+    justify-content: center;
+  }
+  
+  /* Hide decorations on mobile to keep it clean */
+  .hero-curly-arrow {
+    display: none;
+  }
+  
+  .discount-badge-wrapper {
+    width: 100px;
+    height: 100px;
+    right: 5%;
+  }
+  .discount-text .percent {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
