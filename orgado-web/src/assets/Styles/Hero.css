@@ -148,9 +148,25 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* --- Responsive Media Queries --- */
+@media (max-width:1350px){
+  .hero-title{
+    font-size: 7rem !important;
+  }
+}
+@media (max-width:1220px){
+  .hero-title{
+    font-size: 5rem !important;
+  }
+  .hero-main-img{
+    width: 400px !important;
+  }
+}
 
 @media (max-width: 991px) {
+  .container-for-hero{
+  margin-left: 0rem;
+ 
+}
   .hero-section {
     padding: 60px 0;
   }
@@ -185,6 +201,16 @@
 
 @media (max-width: 576px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 4rem !important;
+  }
+  .lead{
+    font-size: 14px !important;
+  }
+  .order-1{
+    padding: 0px !important;
+  }
+
+  .order-2{
+    padding: 5px !important;
   }
 }
