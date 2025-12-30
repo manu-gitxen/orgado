@@ -85,7 +85,7 @@
 
 @media (max-width: 991px) {
   .footer-nav {
-    flex-direction: column; /* Stack links on mobile */
+    flex-direction: column; 
     gap: 15px !important;
   }
 }

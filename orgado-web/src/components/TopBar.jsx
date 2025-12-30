@@ -5,6 +5,7 @@ import '../assets/Styles/TopBar.css'
 
 const TopBar = () => {
   return (
+    
     <div className="top-box ">
       <div className="container-fluid  justify-content-between top-bar-1"> 
       
@@ -14,7 +15,6 @@ const TopBar = () => {
           <span className=""><FaMapMarkerAlt className='mx-1' /> Favicon, New York, USA - 254230</span>
           
         </div>
-
     
         <div className="social-icons d-flex">
           <span className=""><FaFacebookF /></span>
