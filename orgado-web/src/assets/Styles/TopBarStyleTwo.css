@@ -1,0 +1,99 @@
+
+.tb2-section-wrapper {
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+}
+
+
+.tb2-green-header {
+    background-color: #6aa84f; 
+    color: white;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.tb2-small-text {
+    opacity: 1;
+    
+}
+
+
+.tb2-top-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.tb2-top-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: opacity 0.3s;
+}
+
+.tb2-top-links a:hover {
+    opacity: 0.8;
+}
+
+.tb2-divider-light {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.tb2-white-bottom {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 0;
+}
+
+
+.tb2-icon-green {
+    color: #6aa84f;
+    font-size: 16px;
+    
+    transform: scaleX(1); 
+}
+
+.tb2-contact-text {
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tb2-divider-gray {
+    color: #e5ddd9;
+}
+
+
+.tb2-select-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.tb2-select-label {
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tb2-chevron {
+    color: #888;
+    font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    
+    .tb2-white-bottom .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tb2-preferences {
+        width: 100%;
+        justify-content: center;
+    }
+}

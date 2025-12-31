@@ -1,96 +1,138 @@
 import React from "react";
-import TopBar from "../components/TopBar";
-import '../assets/Styles/Contact.css'
+import TopBarStyleTwo from "../components/TopBarStyleTwo"; // Assuming you have this
+import '../assets/Styles/Contact.css';
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import HeaderStyleTwo from "../components/HeaderStyleTwo";
 
 function Contact() {
-      const handleSubmit = (e) =>{
-        e.preventDefault();
-        alert("Form submitted!");
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form submitted!");
+  };
+
   return (
     <>
-      <TopBar />
-      <div className="container my-5 touch-tittle">
-        <h1>Get in Touch</h1>
-        <div className="container d-flex justify-content-between ">
-          <div className=" input-box">
-            <form onSubmit={handleSubmit}>
-                
-              <div className="mb-3 user-name row">
+      <TopBarStyleTwo />
+      <HeaderStyleTwo />
+      
+      <div className="container mb-5 mt-5">
+        <h1 className="fw-bold mb-5 section-title">Get in Touch</h1>
+        
+        <div className="row g-5">
+        
+          <div className="col-lg-8 col-md-12">
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="row g-3 mb-4">
+            
                 <div className="col-md-6">
-                
-                <label htmlFor="name" className="form-label">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  placeholder="Your Name"
-                />
+                  <label htmlFor="name" className="form-label fw-bold text-muted small">Name</label>
+                  <input
+                    type="text"
+                    className="form-control custom-input"
+                    id="name"
+                    placeholder="Your Name"
+                  />
                 </div>
-
+               
                 <div className="col-md-6">
-
-                <label htmlFor="name" className="form-label">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  placeholder="Phone Number"
-                />
+                  <label htmlFor="phone" className="form-label fw-bold text-muted small">Phone</label>
+                  <input
+                    type="text"
+                    className="form-control custom-input"
+                    id="phone"
+                    placeholder="Phone"
+                  />
                 </div>
-                
               </div>
-             
-              <div className="mb-3 user-email">
-                
-                <label htmlFor="email" className="form-label">
-                  Email address
-                </label>
+
+              {/* emaill */}
+              <div className="mb-4">
+                <label htmlFor="email" className="form-label fw-bold text-muted small">Email</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control custom-input"
                   id="email"
-                  placeholder="Your Email"
+                  placeholder="Email"
                 />
               </div>
-              <div className="user-message">
-                <textarea name="" id=""></textarea>
+
+             {/* textares */}
+              <div className="mb-4">
+                <label htmlFor="message" className="form-label fw-bold text-muted small">Messages</label>
+                <textarea
+                  className="form-control custom-input"
+                  id="message"
+                  rows="5"
+                  placeholder="Messages"
+                ></textarea>
               </div>
-              <button type="submit" className="">
+
+              <button type="submit" className=" form-submit-btn ">
                 Submit Now
               </button>
             </form>
           </div>
-          <div className=" ">
-            <div className="support-info">
-                <h4>Support Contact</h4>
-                <div className="phone-info">
-                <h6><span className="contact-icons">< FiPhone /></span> Phone</h6>
-                <p>Mobile : (+88) 872-670-780</p>
-                <p>Mobile : (+88) 842-640-789</p>
-                </div>
-                <div className="email-info">
-                <h6><span className="contact-icons">< FiMail /></span> Email</h6>
-                <p>Email: info@orgado.com</p>
-                <p>Email: support@orgado.com</p>
-                </div>
-                <div className="location-info">
-                <h6><span className="contact-icons">< FiMapPin /></span> Location</h6>
-                <p>Address: 1234 Street Name, City, Country</p>
 
-                </div>
-
+          {/* contacgt info */}
+          <div className="col-lg-4 col-md-12">
+            <div className="support-card p-4 h-100">
+              <h4 className="fw-bold mb-4">Support Contact</h4>
               
-            </div>
-            
+              
+              <div className="contact-item mb-4 d-flex gap-3">
+                <div className="icon-box">
+                  <FiPhone />
+                </div>
+                <div className="contact-details">
+                  <h6 className="fw-bold mb-1">Phone</h6>
+                  <p className="mb-0 text-muted small">Mobile: (+88) 872-670-780</p>
+                  <p className="mb-0 text-muted small">Mobile: (+88) 422-655-793</p>
+                </div>
+              </div>
 
+              <div className="contact-item mb-4 d-flex gap-3">
+                <div className="icon-box">
+                  <FiMail />
+                </div>
+                <div className="contact-details">
+                  <h6 className="fw-bold mb-1">Email</h6>
+                  <p className="mb-0 text-muted small">Info@example.com</p>
+                  <p className="mb-0 text-muted small">Contact@example.com</p>
+                </div>
+              </div>
+              <div className="contact-item d-flex gap-3">
+                <div className="icon-box">
+                  <FiMapPin />
+                </div>
+                <div className="contact-details">
+                  <h6 className="fw-bold mb-1">Location</h6>
+                  <p className="mb-0 text-muted small">
+                    Abbot Favicon Kinney, New York,<br /> USA - 254230
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
+
+       {/* ifram map */}
+        <div className="row mt-5">
+            <div className="col-12">
+                <div className="map-container rounded-3 overflow-hidden">
+                    <iframe 
+                        title="New York Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1647858966778!5m2!1sen!2sbd" 
+                        width="100%" 
+                        height="450" 
+                        style={{border:0}} 
+                        allowFullScreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
       </div>
     </>
   );

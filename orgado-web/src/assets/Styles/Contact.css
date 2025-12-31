@@ -1,54 +1,68 @@
-.touch-tittle h1{
-    font-size: 3.5rem !important;
-    font-weight: 600;
-}
 
-form input{
-    margin-bottom: 15px;
-    padding: 15px !important;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    width: 100%;
-    background-color: #eeeeee !important;
+.section-title {
+    font-size: 3rem;
+    color: #1a1a1a;
 }
-.user-message textarea{
-    width: 100%;
-    height: 150px;
-    padding: 15px !important;
-    font-size: 16px;
-    border: none;
+.custom-input {
+    background-color: #f8f9fa !important; 
+    border: 1px solid transparent;
     border-radius: 4px;
-    background-color: #eeeeee !important;
-    margin-bottom: 15px;
+    padding: 15px 20px !important;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.3s ease;
 }
-form button{
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #699c47;
+.custom-input:focus {
+    background-color: #fff !important;
+    border-color: #6aa84f; 
+    box-shadow: none;
+}
+.custom-input::placeholder {
+    color: #aaa;
+}
+.form-submit-btn {
+    background-color: #6aa84f;
+    border: 1px solid #6aa84f;
+    border-radius: 5px;
+    transition: all 0.3s ease;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.support-info {
-    border: #eeeeee 1px solid;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    padding: 13px 33px ;
     
-    align-content: end;
+}
+.form-submit-btn:hover {
+    background: none;
+    background-color: #fdfdfd !important;
+    color: #6aa84f !important;
+    border: 1px solid #6aa84f !important;
+}
+.support-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); 
+}
+.icon-box {
+    color: #6aa84f; 
+    font-size: 1.4rem;
+    margin-top: -2px;
+}
+.contact-details h6 {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+.map-container {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
 
+
+@media (max-width: 991px) {
+    .support-card {
+        margin-top: 30px;
+    }
 }
-.input-box{
-   width: 100%;
-   margin-right: 50px;
-}
-.contact-icons{
-    color: #699c47;
-    font-size: 22px;
-}
-.support-info p{
-    margin-left: 28px;
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
 }
