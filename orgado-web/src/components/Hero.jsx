@@ -43,13 +43,13 @@ const Hero = () => {
                   Shop Now
                 </button>
                 
-                {/* 3. Curly Arrow Decoration */}
+                
                 <img src={curlyArrow} alt="" className="hero-curly-arrow" />
               </div>
             </div>
           </div>
 
-          {/* --- RIGHT IMAGE --- */}
+        
           <div className="col-lg-6 col-md-12 order-1 order-lg-2 mb-5 mb-lg-0">
             <div className="hero-image-wrapper text-center position-relative">
               <img 
@@ -57,14 +57,9 @@ const Hero = () => {
                 alt="Organic Food" 
                 style={{width:583}}
                 className="img-fluid hero-main-img " 
-              />
-              
-              {/* 4. 50% OFF Custom Badge */}
+              />          
               <div className="discount-badge-wrapper">
-                {/* The Green Shape Image */}
                 <img src={offerShape} alt="" className="offer-shape-img" />
-                
-                {/* The Text Overlay */}
                 <div className="discount-text">
                   <span className="percent">50%</span>
                   <span className="off">OFF</span>

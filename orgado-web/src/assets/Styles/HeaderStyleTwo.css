@@ -1,4 +1,6 @@
-
+*{
+    user-select: auto;
+}
 .h2-header-section {
     background-color: #ffffff;
     height: 90px;
@@ -8,6 +10,7 @@
     position: relative;
     z-index: 1000;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .h2-header-section.h2-sticky {
@@ -22,6 +25,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 10px;
 }
 
 

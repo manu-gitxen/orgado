@@ -1,14 +1,36 @@
 import React from "react";
-import TopBarStyleTwo from "../components/TopBarStyleTwo"; // Assuming you have this
+import TopBarStyleTwo from "../components/TopBarStyleTwo"; 
 import '../assets/Styles/Contact.css';
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import HeaderStyleTwo from "../components/HeaderStyleTwo";
+import { useState } from "react";
 
 function Contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Form submitted!");
-  };
+
+const [formData, setFormData] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  message: ""
+});
+
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log("Form Submitted:", formData);
+};
+
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value
+  }));
+
+  console.log(name + ":", value);   
+};
+
 
   return (
     <>
@@ -31,6 +53,9 @@ function Contact() {
                     className="form-control custom-input"
                     id="name"
                     placeholder="Your Name"
+                    name="name"
+                    value={formData.name}
+                  onChange={handleChange}
                   />
                 </div>
                
@@ -41,6 +66,9 @@ function Contact() {
                     className="form-control custom-input"
                     id="phone"
                     placeholder="Phone"
+                    name="phone"
+                    value={formData.phone}
+                  onChange={handleChange}
                   />
                 </div>
               </div>
@@ -53,6 +81,9 @@ function Contact() {
                   className="form-control custom-input"
                   id="email"
                   placeholder="Email"
+                  name="email"
+                   value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -64,6 +95,9 @@ function Contact() {
                   id="message"
                   rows="5"
                   placeholder="Messages"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
 

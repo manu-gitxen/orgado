@@ -6,7 +6,13 @@
 *{
     font-family: 'jost', sans-serif;
 
+
 }
+*::selection{
+    color: #ffffff;
+    background-color: rgba(94, 226, 17, 0.2);
+}
+
 
 
 

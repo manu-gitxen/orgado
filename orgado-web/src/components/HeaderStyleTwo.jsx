@@ -24,7 +24,7 @@ const HeaderStyleTwo = () => {
         <div className="h2-header-inner">
        
           <div className="h2-logo-area">
-            <a href="#">
+            <a href="/">
               <img src={logo} alt="Orgado" className="h2-logo-img" />
             </a>
           </div>
@@ -33,17 +33,17 @@ const HeaderStyleTwo = () => {
           <nav className={`h2-nav-area ${menuOpen ? "active" : ""}`}>
             <ul className="h2-nav-list">
               <li className="h2-nav-item">
-                <a href="#" className="h2-nav-link">Home <FiChevronDown /></a>
+                <a href="/" className="h2-nav-link">Home <FiChevronDown /></a>
               </li>
               <li className="h2-nav-item">
-                <a href="#" className="h2-nav-link">Shop <FiChevronDown /></a>
+                <a href="/" className="h2-nav-link">Shop <FiChevronDown /></a>
               </li>
               <li className="h2-nav-item">
-                <a href="#" className="h2-nav-link">Pages <FiChevronDown /></a>
+                <a href="/" className="h2-nav-link">Pages <FiChevronDown /></a>
               </li>
-              <li className="h2-nav-item"><a href="#" className="h2-nav-link">Blog</a></li>
-              <li className="h2-nav-item"><a href="#" className="h2-nav-link">Contact</a></li>
-              <li className="h2-nav-item"><a href="#" className="h2-nav-link">Track Order</a></li>
+              <li className="h2-nav-item"><a href="/" className="h2-nav-link">Blog</a></li>
+              <li className="h2-nav-item"><a href="/" className="h2-nav-link">Contact</a></li>
+              <li className="h2-nav-item"><a href="/" className="h2-nav-link">Track Order</a></li>
             </ul>
           </nav>
 
