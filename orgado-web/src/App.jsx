@@ -7,17 +7,23 @@ import Hero from "./components/Hero";
 import ServiceInfo from "./components/ServiceInfo";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import Home from "./components/Home";
+import ProductBannerArea from "./components/ProductBannerArea";
+import TrendingProducts from "./components/TrendingProducts";
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
-      {/* <TopBar /> */}
-      {/* <Header /> */}
-      {/* <Hero /> */}
-      <Contact />
-      {/* <ServiceInfo /> */}
+      <TopBar />
+      <Header />
+      <Hero />
+      <ServiceInfo />
+      {/* <Contact /> */}
+      {/* <Home/> */}
+      <ProductBannerArea/>
+      <TrendingProducts/>
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 .hero-section {
  padding-top: 50px;
-  background-color: #f8f8f8; /* Light grey background */
+  background-color: #f8f8f8; 
   position: relative;
 
 }
@@ -30,40 +30,43 @@
   margin-bottom: 40px;
 }
 
-/* --- Buttons --- */
+
 .btn-success {
   background-color: #6aa84f !important;
-  border: none !important;
+  border: 1px solid #6aa84f !important;
+ 
   transition: all 0.3s ease;
-  padding: 16px 45px; /* Larger pill button */
+  padding: 16px 45px; 
   font-size: 1.1rem;
 }
 
 .btn-success:hover {
-  background-color: #5a9242;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(106, 168, 79, 0.4);
+  background-color: none;
+  background: transparent !important;
+  border: 1px solid #6aa84f  !important;
+  color: #6aa84f !important;
+  /* box-shadow: 0 10px 25px rgba(106, 168, 79, 0.4); */
+
 }
 
-/* --- DECORATIONS --- */
 
-/* 1. Leaves above "Organic" */
+
 .hero-leaf-top {
   position: absolute;
-  top: -80px; /* Adjust based on your leaf image size */
+  top: -80px; 
   left: 200px;
   width: 70px;
   animation: floatLeaf 4s ease-in-out infinite alternate;
 }
 
-/* 2. Curly Arrow */
+
 .hero-curly-arrow {
-  width: 50px; /* Adjust size */
+  width: 50px; 
   opacity: 0.7;
   animation: wiggleArrow 2s ease-in-out infinite;
 }
 
-/* 3. Berry Bottom Left */
+
 .hero-berry-wrapper {
   position: absolute;
   bottom: -120px;
@@ -78,18 +81,18 @@
   animation: slideUp 1.5s ease-out;
 }
 
-/* 4. 50% OFF Badge (Complex Positioning) */
+
 .discount-badge-wrapper {
   position: absolute;
   top: 5%;
   right:10%;
-  width: 110px; /* Adjust to fit your shape image */
+  width: 110px; 
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  /* Floating animation */
+  
   animation: floatBadge 5s ease-in-out infinite;
 }
 
@@ -116,7 +119,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  font-family: 'Jost', sans-serif; /* Or your main font */
+  font-family: 'Jost', sans-serif; 
 }
 
 .discount-text .off {
@@ -127,7 +130,7 @@
   color: #1a1a1a;
 }
 
-/* --- Animations --- */
+
 @keyframes floatLeaf {
   0% { transform: translateY(0) rotate(0deg); }
   100% { transform: translateY(-15px) rotate(10deg); }
@@ -184,7 +187,7 @@
     justify-content: center;
   }
   
-  /* Hide decorations on mobile to keep it clean */
+ 
   .hero-curly-arrow {
     display: none;
   }
