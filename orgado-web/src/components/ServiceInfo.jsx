@@ -7,7 +7,7 @@ const Features = () => {
     
     <section className="features-section">
       <div className="container-fluid">
-        <div className="features-wrapper bg-white rounded-3 shadow-sm p-4 mt-4">
+        <div className="features-wrapper bg-white rounded-3  p-4 mt-4">
           <div className="row g-4">
             
          {/* shippin */}
