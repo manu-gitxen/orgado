@@ -1,20 +1,18 @@
 .features-section {
-  
-    
-    margin-top: 60px; 
+    margin-top: 60px;
     z-index: 10;
-    
+
 }
 
-.features-wrapper {
+/* .features-wrapper {
+    
    
-    box-shadow: 0 0px 0px rgba(0,0,0,0.0) !important;
-}
+} */
 
 .icon-wrapper {
     width: 60px;
     height: 60px;
-    background-color: #f8f8f8; 
+    background-color: #f8f8f8;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -26,7 +24,7 @@
 .feature-icon {
     font-size: 24px;
     color: #1a1a1a;
-    stroke-width: 1.5; 
+    stroke-width: 1.5;
 }
 
 
@@ -34,6 +32,7 @@
     background-color: #6aa84f;
     color: white;
 }
+
 .feature-item:hover .feature-icon {
     color: white;
 }
@@ -45,9 +44,10 @@
     font-size: 20px;
     cursor: pointer;
 }
-.feature-title:hover{
+
+.feature-title:hover {
     color: #6aa84f;
-    
+
 }
 
 .feature-desc {
@@ -58,6 +58,6 @@
 @media (min-width: 1200px) {
     .col-xl-3:not(:last-child) .feature-item {
         border-right: 1px solid #eeeeee;
-        padding-right: 20px; 
+        padding-right: 20px;
     }
 }

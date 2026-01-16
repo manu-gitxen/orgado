@@ -3,7 +3,7 @@
   background-color: #f8f8f8; 
   position: relative;
   overflow: hidden;
-  height: 105dvh;
+  min-height: 105dvh;
 }
 .container-for-hero{
   margin-left: 4rem;

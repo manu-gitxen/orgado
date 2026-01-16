@@ -1,22 +1,22 @@
-
 .active-tab {
-  color: #000000 !important;
+    color: #000000 !important;
 }
+
 .nav-link:hover {
-  color: #333 !important;
+    color: #333 !important;
 }
 
 .nav-link:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .trending-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #e5e5e5; 
+    border: 1px solid #e5e5e5;
     background-color: #fff;
-    color: #1a1a1a; 
+    color: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,10 +25,106 @@
 }
 
 .trending-btn:hover {
-    border-color: #000;
-    background-color: #f9f9f9;
-    color: #000;
+    border-color: #6aa84f;
+    background-color: #6aa84f;
+    color: #ffffff;
 }
-.trending-btn i {
-    font-size: 14px;
+
+.trending-btn {
+    color: rgb(190, 182, 182);
+
+}
+
+.trend-product-card .new-trend p {
+    text-align: start !important;
+    color: white;
+    background-color: #6aa84f;
+    width: 40px;
+    padding: 0px 25px 0px 7px;
+}
+
+.new-trend {
+    width: 100%;
+}
+
+/* .trend-product-card{
+    display: flex !important;
+    
+} */
+.trend-product-card img {
+    width: 140px;
+}
+
+.trend-product-card h4:hover {
+    color: #6aa84f;
+    cursor: pointer;
+}
+
+.trend-product-card h5 {
+    color: #6aa84f;
+}
+
+.trend-product-card button {
+    background-color: #6aa84f;
+    color: white;
+    border: none;
+    transition: all 0.5s;
+    border-radius: 5px;
+
+}
+
+.trend-product-card button .qty-s {
+    color: red;
+
+
+}
+
+.trend-product-card button:hover {
+    background-color: #e5e5e5;
+    color: #1a1a1a;
+}
+
+.trend-product-card .quantity {
+    background-color: #e5e5e5;
+    padding: 0px 10px;
+    color: #6aa84f;
+    border: 1px solid #6aa84f;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.trend-product-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.horizontal-scroll {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+}
+
+/* .product-trending-wrapper{
+      max-height: 200px;   
+  overflow-y: hidden;   
+  overflow-x: auto;
+ } */
+  .horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #6aa84f, #ffb347);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
 }

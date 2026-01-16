@@ -2,9 +2,38 @@ import React from "react";
 import trendbnr from "../assets/images/banner-imgs/trendingbnr-1.jpg";
 import "../assets/Styles/TrendingProducts.css";
 import { useState } from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import bean from "../assets/images/trending-products/trendbeans.jpg";
+import chips from "../assets/images/trending-products/trendchips.jpg";
+import mug from "../assets/images/trending-products/trendmug.jpg";
+import artisan from "../assets/images/trending-products/trendkoffe.jpg";
+import sticker from "../assets/images/trending-products/trendsticker.jpg";
+const trendingProduts = [
+  { id: 1, title: "Premium Broad bean", price: "$40.00", imgsrc: bean, qty: 1 },
+  { id: 2, title: "Triangular Chips", price: "$9.00", imgsrc: chips, qty: 1 },
+  { id: 3, title: "Ceramic Coffee Mug", price: "$12.00", imgsrc: mug, qty: 1 },
+  { id: 4, title: "Artisan coffee", price: "$25.00", imgsrc: artisan, qty: 1 },
+  { id: 5, title: "Cartoon Sticker", price: "$4.00", imgsrc: sticker, qty: 1 },
+];
 
 const TrendingProducts = () => {
   const [activeTab, setActiveTab] = useState("view-all");
+  const [items, setItems] = useState(trendingProduts);
+
+  const handlechange = (id) => () => {
+    console.log(id);
+    const updateditem = items.map((item) =>
+      item.id === id ? { ...item, qty: item.qty + 1 } : item
+    );
+    setItems(updateditem);
+  };
+  const handleDecrease = (id) => () => {
+    const updatedItems = items.map((item) =>
+      item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
+    );
+
+    setItems(updatedItems);
+  };
   return (
     <div>
       <div className="container">
@@ -21,7 +50,6 @@ const TrendingProducts = () => {
                   />
                 </div>
 
-        
                 <div
                   className="trending-banner-text position-absolute"
                   style={{ top: "30px", left: "30px", zIndex: 2 }}
@@ -156,17 +184,48 @@ const TrendingProducts = () => {
                   </div>
                   <div className="trending-navigation-buttons d-flex gap-2">
                     <button className="trending-btn prev-btn">
-                      
+                      <BsChevronLeft size={15} />
                     </button>
 
                     <button className="trending-btn next-btn">
-                      <i className="fa-regular fa-angle-right"></i>
+                      <BsChevronRight size={15} />
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="product-trending-wrapper"></div>
+            <div className="product-trending-wrappe horizontal-scroll">
+              <div className="row flex-nowrap">
+                {items.map((trendProduct) => (
+                  <div
+                    className="col-lg-4 col-md-6 col-12 card-col"
+                    key={trendProduct.id}
+                  >
+                    <div className="trend-product-card d-flex flex-column align-items-center text-center p-3 mb-4">
+                      <a href="/">
+                        <div className="new-trend">
+                          <p className="">new</p>
+                        </div>
+                        <img src={trendProduct.imgsrc} alt="product image" />
+                        <h4>{trendProduct.title}</h4>
+                        <h5>{trendProduct.price}</h5>
+                      </a>
+                      <span>*****</span>
+                      <div className="d-flex align-items-center gap-2 ">
+                        <button onClick={handlechange(trendProduct.id)}>
+                          Qty +
+                        </button>
+                        <button onClick={handleDecrease(trendProduct.id)}>
+                          Qty <span className="qty-s">--</span>
+                        </button>
+                        <span className="quantity">{trendProduct.qty}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                ;
+              </div>
+            </div>
           </div>
         </div>
       </div>
