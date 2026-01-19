@@ -3,6 +3,8 @@ import Header from './Header'
 import TopBar from './TopBar'
 import Hero from './Hero'
 import ServiceInfo from './ServiceInfo'
+import ProductBannerArea from "./ProductBannerArea";
+import TrendingProducts from "./TrendingProducts";
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
       <Header/>
       <Hero/>
       <ServiceInfo/>
+      <ProductBannerArea/>
+      <TrendingProducts/>
     </div>
   )
 }

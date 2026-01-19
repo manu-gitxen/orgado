@@ -8,22 +8,27 @@ import ServiceInfo from "./components/ServiceInfo";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Home from "./components/Home";
-import ProductBannerArea from "./components/ProductBannerArea";
-import TrendingProducts from "./components/TrendingProducts";
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
   
 
   return (
     <>
-      <TopBar />
-      <Header />
-      <Hero />
-      <ServiceInfo />
+      {/* <TopBar /> */}
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <ServiceInfo /> */}
       {/* <Contact /> */}
-      {/* <Home/> */}
-      <ProductBannerArea/>
-      <TrendingProducts/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+
+      <Home/>
+    
       <Footer />
     </>
   );

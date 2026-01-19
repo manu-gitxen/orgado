@@ -4,6 +4,7 @@ import "../assets/Styles/HeaderStyleTwo.css";
 import { 
   FiChevronDown, FiShoppingBag, FiHeart, FiUser, FiMenu, FiX 
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const HeaderStyleTwo = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -33,7 +34,7 @@ const HeaderStyleTwo = () => {
           <nav className={`h2-nav-area ${menuOpen ? "active" : ""}`}>
             <ul className="h2-nav-list">
               <li className="h2-nav-item">
-                <a href="/" className="h2-nav-link">Home <FiChevronDown /></a>
+                <Link to="/" className="h2-nav-link">Home <FiChevronDown /></Link>
               </li>
               <li className="h2-nav-item">
                 <a href="/" className="h2-nav-link">Shop <FiChevronDown /></a>
