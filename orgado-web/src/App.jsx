@@ -7,13 +7,10 @@ import Hero from "./components/Hero";
 import ServiceInfo from "./components/ServiceInfo";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
-import Home from "./components/Home";
-import { Routes, Route } from 'react-router-dom';
-
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  
-
   return (
     <>
       {/* <TopBar /> */}
@@ -25,10 +22,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
-
-      <Home/>
-    
       <Footer />
     </>
   );
