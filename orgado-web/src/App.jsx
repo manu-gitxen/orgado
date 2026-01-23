@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import UserAccount from "./pages/UserAccount";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/UserAccount" element={<UserAccount />} />
       </Routes>
       <Footer />
     </>
