@@ -1,0 +1,110 @@
+.flash_sale_title h1{
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-align: left;
+    
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.flash_sale_title h1:hover{
+    color: #6aa84f;
+    cursor: pointer;
+}
+
+.flash-sale-box{
+    width: 100%;
+    height: 230px;
+    background-image: url('../images/flash-sale/broccoli.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;  
+    cursor: pointer;  
+    border: 2px solid #6aa84f;
+}
+.badge{
+    background-color: #6aa84f;
+    position: relative;
+    left: 100px;
+}
+.brocoli-content{
+    position: relative;
+    top: 35px;
+    background-color: rgba(240, 248, 255, 0.716);
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid #6aa84f;
+    border-radius: 10px;
+}
+.potato-banner{
+    width: 100%;
+    height: 460px;
+    background-image: url('../images/flash-sale/potato.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;  
+    cursor: pointer;  
+    overflow: hidden;
+}
+.potato-banner h3{
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.4rem;
+    
+    width: 50%;
+    
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+.potato-banner p{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.potato-banner h3{
+    margin-left: 20px;
+    font-weight: 800;
+    width: 100%;
+    font-size: 1.7rem;
+
+}
+.potato-banner .from-text{
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+.potato-banner .from-price{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #A85434;
+}
+.potato-hot-item{
+    position: relative;
+    left: 170px;
+    top: 40px;
+    width: 100px;
+    text-align: center;
+    background-color: #A85434;
+    color: white;
+    border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.potato-hot-item-span{
+    font-size: 1rem;
+    margin: 0px;
+}
+
+
+

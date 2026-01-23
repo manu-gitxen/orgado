@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react"; // Added useEffect
 import trendbnr from "../assets/images/banner-imgs/trendingbnr-1.jpg";
 import "../assets/Styles/TrendingProducts.css";
 import { useState } from "react";
@@ -8,7 +8,9 @@ import chips from "../assets/images/trending-products/trendchips.jpg";
 import mug from "../assets/images/trending-products/trendmug.jpg";
 import artisan from "../assets/images/trending-products/trendkoffe.jpg";
 import sticker from "../assets/images/trending-products/trendsticker.jpg";
-const trendingProduts = [
+
+// Default data (kept as fallback)
+const defaultTrendingProducts = [
   { id: 1, title: "Premium Broad bean", price: "$40.00", imgsrc: bean, qty: 1 },
   { id: 2, title: "Triangular Chips", price: "$9.00", imgsrc: chips, qty: 1 },
   { id: 3, title: "Ceramic Coffee Mug", price: "$12.00", imgsrc: mug, qty: 1 },
@@ -16,9 +18,20 @@ const trendingProduts = [
   { id: 5, title: "Cartoon Sticker", price: "$4.00", imgsrc: sticker, qty: 1 },
 ];
 
-const TrendingProducts = () => {
+// CHANGE 1: Added props (title, sidebarContent, productList)
+const TrendingProducts = ({ title, sidebarContent, productList, disableScroll }) => {
+  
   const [activeTab, setActiveTab] = useState("view-all");
-  const [items, setItems] = useState(trendingProduts);
+  
+  // CHANGE 2: Initialize state with passed productList OR the default list
+  const [items, setItems] = useState(productList || defaultTrendingProducts);
+
+  // CHANGE 3: Update items if the parent passes a new list
+  useEffect(() => {
+    if (productList) {
+      setItems(productList);
+    }
+  }, [productList]);
 
   const handlechange = (id) => () => {
     console.log(id);
@@ -27,61 +40,59 @@ const TrendingProducts = () => {
     );
     setItems(updateditem);
   };
+  
   const handleDecrease = (id) => () => {
     const updatedItems = items.map((item) =>
       item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
     );
-
     setItems(updatedItems);
   };
+
   return (
     <div>
-      <div className="container">
+      <div className="container" style={{ marginTop: "160px"}}>
         <div className="row">
+          
+          {/* CHANGE 4: REPLACED HARDCODED BANNER WITH PROP */}
           <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
-            <a href="/">
-              <div className="trending-banner position-relative mb-5">
-                <div className="w-img">
-                  <img
-                    src={trendbnr}
-                    alt=""
-                    className="rounded-4"
-                    style={{ width: "100%", display: "block" }}
-                  />
-                </div>
-
-                <div
-                  className="trending-banner-text position-absolute"
-                  style={{ top: "30px", left: "30px", zIndex: 2 }}
-                >
-                  <h5
-                    style={{
-                      color: "white",
-                      fontWeight: "400",
-                      marginBottom: "5px",
-                    }}
-                  >
-                    Organic
-                  </h5>
-                  <h3
-                    style={{
-                      color: "white",
-                      fontWeight: "700",
-                      fontSize: "32px",
-                    }}
-                  >
-                    Fresh Masala
-                  </h3>
-                </div>
-              </div>
-            </a>
+            {sidebarContent ? (
+               sidebarContent 
+            ) : (
+               /* Default Banner (If nothing is passed, show the original Fresh Masala) */
+               <a href="/">
+               <div className="trending-banner position-relative mb-5">
+                 <div className="w-img">
+                   <img
+                     src={trendbnr}
+                     alt=""
+                     className="rounded-4"
+                     style={{ width: "100%", display: "block" }}
+                   />
+                 </div>
+ 
+                 <div
+                   className="trending-banner-text position-absolute"
+                   style={{ top: "30px", left: "30px", zIndex: 2 }}
+                 >
+                   <h5 style={{ color: "white", fontWeight: "400", marginBottom: "5px" }}>
+                     Organic
+                   </h5>
+                   <h3 style={{ color: "white", fontWeight: "700", fontSize: "32px" }}>
+                     Fresh Masala
+                   </h3>
+                 </div>
+               </div>
+             </a>
+            )}
           </div>
+
           <div className="col-xxl-9 col-xl-8 col-lg-8">
             <div className="row">
               <div className="col-xxl-4 col-xl-5 col-lg-4">
                 <div className="bd-section__title-wrapper">
                   <div className="bd-section__title ">
-                    <h1>You May Missed</h1>
+                    {/* CHANGE 5: Dynamic Title */}
+                    <h1>{title || "You May Missed"}</h1>
                   </div>
                 </div>
               </div>
@@ -91,11 +102,10 @@ const TrendingProducts = () => {
                     <nav>
                       <div className="nav justify-content-end border-0 me-5">
                         <button
-                          className={`nav-link border-0 bg-transparent p-0 me-4 ${
-                            activeTab === "view-all"
-                              ? "active-tab"
-                              : "text-muted"
-                          }`}
+                          className={`nav-link border-0 bg-transparent p-0 me-4 ${activeTab === "view-all"
+                            ? "active-tab"
+                            : "text-muted"
+                            }`}
                           onClick={() => setActiveTab("view-all")}
                           style={{
                             fontWeight: "600",
@@ -103,21 +113,21 @@ const TrendingProducts = () => {
                             transition: "0.5s",
                           }}
                         >
-                          {/* {activeTab === "view-all" && (
-                            <span
+                          {activeTab === "view-all" && (
+                            <span className="click-dot"
                               style={{ color: "#FFB800", marginRight: "5px" }}
                             >
                               •
                             </span>
-                          )} */}
+                          )}
                           View All
                         </button>
+                        {/* Other buttons remain exactly the same */}
                         <button
-                          className={`nav-link border-0 bg-transparent p-0 me-4 ${
-                            activeTab === "new-arrival"
-                              ? "active-tab"
-                              : "text-muted"
-                          }`}
+                          className={`nav-link border-0 bg-transparent p-0 me-4 ${activeTab === "new-arrival"
+                            ? "active-tab"
+                            : "text-muted"
+                            }`}
                           onClick={() => setActiveTab("new-arrival")}
                           style={{
                             fontWeight: "600",
@@ -125,21 +135,20 @@ const TrendingProducts = () => {
                             transition: "0.3s",
                           }}
                         >
-                          {/* {activeTab === "new-arrival" && (
-                            <span
+                          {activeTab === "new-arrival" && (
+                            <span className="click-dot"
                               style={{ color: "#FFB800", marginRight: "5px" }}
                             >
                               •
                             </span>
-                          )} */}
+                          )}
                           New Arrival
                         </button>
                         <button
-                          className={`nav-link border-0 bg-transparent p-0 me-4 ${
-                            activeTab === "best-sale"
-                              ? "active-tab"
-                              : "text-muted"
-                          }`}
+                          className={`nav-link border-0 bg-transparent p-0 me-4 ${activeTab === "best-sale"
+                            ? "active-tab"
+                            : "text-muted"
+                            }`}
                           onClick={() => setActiveTab("best-sale")}
                           style={{
                             fontWeight: "600",
@@ -147,22 +156,21 @@ const TrendingProducts = () => {
                             transition: "0.3s",
                           }}
                         >
-                          {/* {activeTab === "best-sale" && (
-                            <span
+                          {activeTab === "best-sale" && (
+                            <span className="click-dot"
                               style={{ color: "#FFB800", marginRight: "5px" }}
                             >
                               •
                             </span>
-                          )} */}
+                          )}
                           Best Sale
                         </button>
-                        {/* Tab: Trending */}
+                        
                         <button
-                          className={`nav-link border-0 bg-transparent p-0 ${
-                            activeTab === "trending"
-                              ? "active-tab"
-                              : "text-muted"
-                          }`}
+                          className={`nav-link border-0 bg-transparent p-0 ${activeTab === "trending"
+                            ? "active-tab"
+                            : "text-muted"
+                            }`}
                           onClick={() => setActiveTab("trending")}
                           style={{
                             fontWeight: "600",
@@ -170,13 +178,13 @@ const TrendingProducts = () => {
                             transition: "0.3s",
                           }}
                         >
-                          {/* {activeTab === "trending" && (
-                            <span
+                          {activeTab === "trending" && (
+                            <span className="click-dot"
                               style={{ color: "#FFB800", marginRight: "5px" }}
                             >
                               •
                             </span>
-                          )} */}
+                          )}
                           Trending
                         </button>
                       </div>
@@ -195,7 +203,7 @@ const TrendingProducts = () => {
               </div>
             </div>
             <div className="product-trending-wrappe horizontal-scroll">
-              <div className="row flex-nowrap">
+              <div className={`row ${disableScroll ? "" : "flex-nowrap"}`}>
                 {items.map((trendProduct) => (
                   <div
                     className="col-lg-4 col-md-6 col-12 card-col"

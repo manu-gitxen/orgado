@@ -6,6 +6,7 @@ import ServiceInfo from '../components/ServiceInfo'
 import ProductBannerArea from "../components/ProductBannerArea";
 import TrendingProducts from "../components/TrendingProducts";
 import BrowseCatg from '../components/BrowseCatg'
+import FlashSaleSection from '../components/FlashSaleSection' 
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <ProductBannerArea/>
       <TrendingProducts/>
       <BrowseCatg/>
+      <FlashSaleSection/>
     </div>
   )
 }
