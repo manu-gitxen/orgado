@@ -37,8 +37,23 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-    
-    const isLogin = false;
+
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    const checkLogin = () => {
+      const loginStatus = localStorage.getItem("isLogin") === "true";
+      setIsLogin(loginStatus);
+    };
+
+    checkLogin();
+
+    window.addEventListener("storage", checkLogin);
+
+    return () => {
+      window.removeEventListener("storage", checkLogin);
+    };
+  }, []);
 
   return (
     <>
@@ -211,7 +226,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              {/*  Icons  >992px */}
+              {/*  icons  >992px */}
               <div className="d-lg-flex d-none align-items-center gap-3">
                 <div className="search-box position-relative">
                   <input type="text" placeholder="Search products..." />
@@ -230,12 +245,12 @@ const Header = () => {
 
                 <div className="icon-box user-icon">
                   {isLogin ? (
-                    <Link to="/login" style={{color:'red', textAlign:'center'}}>
-                      <i className="bi bi-person-x"></i> 
-                    </Link>
-                  ) : (
                     <Link to="/UserAccount" className="icon-box">
                       <i className="bi bi-person-check"></i>
+                    </Link>
+                  ) : (
+                    <Link to="/login" className="icon-box">
+                      <i className="bi bi-person-x"></i>
                     </Link>
                   )}
                 </div>
