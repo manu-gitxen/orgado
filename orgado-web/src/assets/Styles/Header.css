@@ -1,3 +1,5 @@
+
+
 .navbar-brand img{
   height: 48px;
   
@@ -84,7 +86,7 @@
 .icon-box .badge {
   position: absolute;
   top: -5px;
-  right: -5px;
+  left: 30px;
   background: #6aa84f;
   color: #fff;
   font-size: 11px;
@@ -95,7 +97,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  
+
 }
 
 .navbar-nav .nav-link {

@@ -37,6 +37,8 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+    
+    const isLogin = false;
 
   return (
     <>
@@ -216,18 +218,26 @@ const Header = () => {
                   <i className="bi bi-search search-icon"></i>
                 </div>
 
-                <div className="icon-box position-relative">
+                <div className="icon-box position-relative cart-icon">
                   <i className="bi bi-bag"></i>
                   <span className="badge">0</span>
                 </div>
 
-                <div className="icon-box position-relative">
+                <div className="icon-box position-relative wishlist-icon">
                   <i className="bi bi-heart"></i>
                   <span className="badge">0</span>
                 </div>
 
-                <div className="icon-box">
-                  <i className="bi bi-person"></i>
+                <div className="icon-box user-icon">
+                  {isLogin ? (
+                    <Link to="/login" style={{color:'red', textAlign:'center'}}>
+                      <i className="bi bi-person-x"></i> 
+                    </Link>
+                  ) : (
+                    <Link to="/UserAccount" className="icon-box">
+                      <i className="bi bi-person-check"></i>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
