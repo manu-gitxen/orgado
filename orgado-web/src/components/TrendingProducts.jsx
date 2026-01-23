@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // Added useEffect
+import React, { useEffect } from "react";
 import trendbnr from "../assets/images/banner-imgs/trendingbnr-1.jpg";
 import "../assets/Styles/TrendingProducts.css";
 import { useState } from "react";
@@ -9,7 +9,6 @@ import mug from "../assets/images/trending-products/trendmug.jpg";
 import artisan from "../assets/images/trending-products/trendkoffe.jpg";
 import sticker from "../assets/images/trending-products/trendsticker.jpg";
 
-// Default data (kept as fallback)
 const defaultTrendingProducts = [
   { id: 1, title: "Premium Broad bean", price: "$40.00", imgsrc: bean, qty: 1 },
   { id: 2, title: "Triangular Chips", price: "$9.00", imgsrc: chips, qty: 1 },
@@ -18,15 +17,13 @@ const defaultTrendingProducts = [
   { id: 5, title: "Cartoon Sticker", price: "$4.00", imgsrc: sticker, qty: 1 },
 ];
 
-// CHANGE 1: Added props (title, sidebarContent, productList)
+
 const TrendingProducts = ({ title, sidebarContent, productList, disableScroll }) => {
   
   const [activeTab, setActiveTab] = useState("view-all");
   
-  // CHANGE 2: Initialize state with passed productList OR the default list
   const [items, setItems] = useState(productList || defaultTrendingProducts);
 
-  // CHANGE 3: Update items if the parent passes a new list
   useEffect(() => {
     if (productList) {
       setItems(productList);
@@ -53,12 +50,11 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
       <div className="container" style={{ marginTop: "160px"}}>
         <div className="row">
           
-          {/* CHANGE 4: REPLACED HARDCODED BANNER WITH PROP */}
+          
           <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
             {sidebarContent ? (
                sidebarContent 
             ) : (
-               /* Default Banner (If nothing is passed, show the original Fresh Masala) */
                <a href="/">
                <div className="trending-banner position-relative mb-5">
                  <div className="w-img">
@@ -91,7 +87,6 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
               <div className="col-xxl-4 col-xl-5 col-lg-4">
                 <div className="bd-section__title-wrapper">
                   <div className="bd-section__title ">
-                    {/* CHANGE 5: Dynamic Title */}
                     <h1>{title || "You May Missed"}</h1>
                   </div>
                 </div>
@@ -122,7 +117,6 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
                           )}
                           View All
                         </button>
-                        {/* Other buttons remain exactly the same */}
                         <button
                           className={`nav-link border-0 bg-transparent p-0 me-4 ${activeTab === "new-arrival"
                             ? "active-tab"

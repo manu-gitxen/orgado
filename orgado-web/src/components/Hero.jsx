@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section className="hero-section">
       
-      {/* 1. Bottom Left Berry Decoration */}
+      
       <div className="hero-berry-wrapper d-none d-xl-block">
         <img src={berryDeco} alt="" className="hero-berry" />
       </div>
