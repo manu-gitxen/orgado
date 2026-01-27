@@ -6,19 +6,22 @@ import ServiceInfo from '../components/ServiceInfo'
 import ProductBannerArea from "../components/ProductBannerArea";
 import TrendingProducts from "../components/TrendingProducts";
 import BrowseCatg from '../components/BrowseCatg'
-import FlashSaleSection from '../components/FlashSaleSection' 
+import FlashSaleSection from '../components/FlashSaleSection'
+import FeaturedSection from '../components/FeaturedSection'
 
 const Home = () => {
   return (
     <div>
-      <TopBar/>
-      <Header/>
-      <Hero/>
-      <ServiceInfo/>
-      <ProductBannerArea/>
-      <TrendingProducts/>
-      <BrowseCatg/>
-      <FlashSaleSection/>
+      <TopBar />
+      <Header />
+      <Hero />
+      <ServiceInfo />
+      <ProductBannerArea />
+      <TrendingProducts />
+
+      <BrowseCatg />
+      <FlashSaleSection />
+      <FeaturedSection />
     </div>
   )
 }
