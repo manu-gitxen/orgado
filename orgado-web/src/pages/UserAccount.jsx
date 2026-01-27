@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiLogOut, FiUser } from "react-icons/fi";
 import "../assets/Styles/UserAccount.css";
+import Header from "../components/Header";
 
 const UserAccount = () => {
     const navigate = useNavigate();
@@ -30,26 +31,29 @@ const UserAccount = () => {
     };
 
     return (
-        <div className="user-account-container">
-            <div className="user-account-card">
-                <div className="profile-avatar">
-                    <FiUser />
-                </div>
+        <>
+            <Header />
+            <div className="user-account-container">
+                <div className="user-account-card">
+                    <div className="profile-avatar">
+                        <FiUser />
+                    </div>
 
-                <h2 className="user-name">Welcome Back!</h2>
-                <p className="user-email">{user?.email || "User"}</p>
+                    <h2 className="user-name">Welcome Back!</h2>
+                    <p className="user-email">{user?.email || "User"}</p>
 
-                <div className="account-actions">
-                    <button className="btn-dashboard" onClick={() => navigate("/")}>
-                        Go to Home
-                    </button>
+                    <div className="account-actions">
+                        <button className="btn-dashboard" onClick={() => navigate("/")}>
+                            Go to Home
+                        </button>
 
-                    <button className="btn-logout" onClick={handleLogout}>
-                        <FiLogOut /> Logout
-                    </button>
+                        <button className="btn-logout" onClick={handleLogout}>
+                            <FiLogOut /> Logout
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMail, FiLock, FiLogIn } from "react-icons/fi";
+import Header from "../components/Header";
 import "../assets/Styles/Login.css";
 
 const Login = () => {
@@ -25,6 +26,8 @@ const Login = () => {
     };
 
     return (
+    <>  
+    <Header />
         <div className="login-container">
             <div className="login-card">
                 <h2 className="login-title">Welcome Back</h2>
@@ -86,6 +89,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

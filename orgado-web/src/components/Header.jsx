@@ -113,8 +113,8 @@ const Header = () => {
                 <li
                   className={`nav-item dropdown ${openDropdown === "home" ? "open" : ""}`}
                 >
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="nav-link dropdown-toggle"
                     onClick={(e) => {
                       e.preventDefault();
@@ -122,22 +122,22 @@ const Header = () => {
                     }}
                   >
                     Home <FiChevronDown className="dropdown-icon" />
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/" onClick={closeNav}>
                         Home 1
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/" onClick={closeNav}>
                         Home 2
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/" onClick={closeNav}>
                         Home 3
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
