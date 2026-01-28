@@ -9,7 +9,6 @@ const UserAccount = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        // user info from localStorage
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
             try {

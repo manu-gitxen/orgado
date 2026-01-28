@@ -148,10 +148,8 @@
     margin-top: 5px;
 }
 
-/* Big Product Card */
 .big-product-card {
     background: #F7F6EE;
-    /* Light beige bg matching user image */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -183,7 +181,6 @@
 
 .big-product-price strong {
     color: #D36C29;
-    /* Orange/Brownish color */
     font-size: 28px;
     font-weight: 800;
     margin-left: 5px;

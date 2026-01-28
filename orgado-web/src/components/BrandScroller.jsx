@@ -3,8 +3,7 @@ import '../assets/Styles/BrandScroller.css';
 import { FaLeaf, FaSpa, FaSeedling, FaHollyBerry, FaAppleAlt } from 'react-icons/fa';
 
 const BrandScroller = () => {
-    // Mock data to simulate the brands in the image
-    // We duplicate the list to ensure smooth infinite scrolling
+   
     const brands = [
         { id: 1, name: 'Organist', sub: '100% Natural', icon: <FaLeaf /> },
         { id: 2, name: 'Kemistry', sub: 'Fresh Style', icon: <FaSpa /> },
@@ -12,7 +11,6 @@ const BrandScroller = () => {
         { id: 4, name: 'Organo', sub: 'Natural', icon: <FaHollyBerry /> },
         { id: 5, name: 'Cosmetix', sub: 'Organic Cosmetics', icon: <FaLeaf /> },
         { id: 6, name: 'Natural', sub: 'Since 2005', icon: <FaAppleAlt /> },
-        // Duplicate for infinite scroll
         { id: 7, name: 'Organist', sub: '100% Natural', icon: <FaLeaf /> },
         { id: 8, name: 'Kemistry', sub: 'Fresh Style', icon: <FaSpa /> },
         { id: 9, name: 'Cosmedico', sub: 'Haircare Products', icon: <FaSeedling /> },

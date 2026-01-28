@@ -29,14 +29,12 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content text-center">
           
-          {/*logo */}
           <div className="footer-logo mb-4">
             <a href="#">
               <img src={footerLogo} alt="Orgado" height="50" />
             </a>
           </div>
 
-          {/*links */}
           <ul className="footer-nav d-flex flex-wrap justify-content-center gap-4 gap-lg-5 mb-4 list-unstyled">
             <li><a href="#">ABOUT OUR COMPANY</a></li>
             <li><a href="#">LATEST PRODUCTS</a></li>
@@ -46,7 +44,6 @@ const Footer = () => {
             <li><a href="#">FLASH OFFERS</a></li>
           </ul>
 
-          {/*icons */}
           <div className="social-links d-flex justify-content-center gap-3 mb-5">
             <a href="#" className="social-btn"><FaFacebookF /></a>
             <a href="#" className="social-btn"><FaTwitter /></a>
@@ -56,9 +53,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* 4. copyright */}
-
-
       <div className="copyright-area py-3">
         <div className="container text-center">
           <p className="mb-0 text-muted small">
@@ -67,7 +61,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* 5. scroll to top button */}
       <button 
         className={`scroll-top-btn ${showScroll ? "show" : ""}`} 
         onClick={scrollTop}

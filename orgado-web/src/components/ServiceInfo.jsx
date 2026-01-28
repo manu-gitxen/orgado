@@ -9,8 +9,6 @@ const Features = () => {
       <div className="container">
         <div className="features-wrapper bg-white  p-4 mt-4">
           <div className="row g-4">
-            
-         {/* shippin */}
             <div className="col-xl-3 col-lg-3 col-md-6 col-12">
               <div className="feature-item d-flex align-items-center gap-3">
                 <div className="icon-wrapper">
@@ -21,9 +19,7 @@ const Features = () => {
                   <p className="feature-desc mb-0">On All Order Over $599</p>
                 </div>
               </div>
-            </div>
-
-            {/* returns*/}
+            </div> 
             <div className="col-xl-3 col-lg-3 col-md-6 col-12">
               <div className="feature-item d-flex align-items-center gap-3">
                 <div className="icon-wrapper">
@@ -35,8 +31,6 @@ const Features = () => {
                 </div>
               </div>
             </div>
-
-            {/*payment */}
             <div className="col-xl-3 col-lg-3 col-md-6 col-12">
               <div className="feature-item d-flex align-items-center gap-3">
                 <div className="icon-wrapper">
@@ -48,8 +42,6 @@ const Features = () => {
                 </div>
               </div>
             </div>
-
-            {/*support */}
             <div className="col-xl-3 col-lg-3 col-md-6 col-12">
               <div className="feature-item d-flex align-items-center gap-3 border-0">
                 <div className="icon-wrapper">

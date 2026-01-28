@@ -13,10 +13,7 @@ const Login = () => {
         e.preventDefault();
         if (email && password) {
             localStorage.setItem("isLogin", "true");
-            // user name from the emial
             localStorage.setItem("user", JSON.stringify({ email }));
-
-            // notify header about the change
             window.dispatchEvent(new Event("storage"));
 
             navigate("/");

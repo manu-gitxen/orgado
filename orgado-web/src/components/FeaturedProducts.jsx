@@ -2,12 +2,7 @@ import React from 'react';
 import '../assets/Styles/FeaturedProducts.css';
 import { FaStar, FaArrowRight } from 'react-icons/fa';
 
-// Import images or use placeholders
-// Banners
-import icecream from '../assets/images/featuredProductsImgs/icecream.png'; // Placeholder
-import veg from '../assets/images/featuredProductsImgs/veg.png'; // Placeholder
 
-// Products
 import prod1 from '../assets/images/trending-products/trendbeans.jpg';
 import prod2 from '../assets/images/trending-products/trendchips.jpg';
 import prod3 from '../assets/images/trending-products/trendmug.jpg';
@@ -29,7 +24,6 @@ const FeaturedProducts = () => {
 
     return (
         <div className="featured-products-wrapper">
-            {/* Top Banners Row */}
             <div className="row mb-5">
                 <div className="col-lg-6 mb-4 mb-lg-0">
                     <div className="banner-card banner-img1" style={{ backgroundColor: '#F4F0EC' }}>
@@ -54,9 +48,7 @@ const FeaturedProducts = () => {
                 </div>
             </div>
 
-            {/* Bottom Products Row */}
             <div className="row">
-                {/* Top Rated Column */}
                 <div className="col-xl-4 col-lg-6 col-md-6 mb-4">
                     <div className="header-with-link">
                         <h3>Top Rated</h3>
@@ -78,7 +70,6 @@ const FeaturedProducts = () => {
                     </div>
                 </div>
 
-                {/* Popular Column */}
                 <div className="col-xl-4 col-lg-6 col-md-6 mb-4">
                     <div className="header-with-link">
                         <h3>Popular</h3>
@@ -100,7 +91,6 @@ const FeaturedProducts = () => {
                     </div>
                 </div>
 
-                {/* Big Card Column */}
                 <div className="col-xl-4 col-lg-12 col-md-12">
                     <div className="big-product-card">
                         <div className="big-product-content">
