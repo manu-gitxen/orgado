@@ -1,4 +1,3 @@
-
 .brand-scroller-container {
     width: 100%;
     padding: 60px 0;
@@ -16,7 +15,7 @@
     width: max-content;
 }
 
-.brand-scroller-track:hover {
+.brand-scroller-container:hover .brand-scroller-track {
     animation-play-state: paused;
 }
 
