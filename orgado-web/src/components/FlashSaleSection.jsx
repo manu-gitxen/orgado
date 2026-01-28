@@ -1,4 +1,4 @@
-// components/FlashSaleSection.jsx
+
 import React from "react";
 import TrendingProducts from "./TrendingProducts"; 
 import bean from "../assets/images/trending-products/trendbeans.jpg";
@@ -6,7 +6,7 @@ import "../assets/Styles/FlashSaleSection.css";
 
 const FlashSaleSection = () => {
 
-  // 1. Create the Sidebar Design (Flash Sale + Potato)
+  
   const flashSaleDesign = (
     <div>
         <div className="flash_sale_title">
@@ -32,7 +32,7 @@ const FlashSaleSection = () => {
     </div>
   );
 
-  // 2. Pass it to the component
+  
   return (
     <TrendingProducts 
         title="You May Browse"

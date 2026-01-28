@@ -8,6 +8,7 @@ import TrendingProducts from "../components/TrendingProducts";
 import BrowseCatg from '../components/BrowseCatg'
 import FlashSaleSection from '../components/FlashSaleSection'
 import FeaturedSection from '../components/FeaturedSection'
+import BrandScroller from '../components/BrandScroller'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <BrowseCatg />
       <FlashSaleSection />
       <FeaturedSection />
+      <BrandScroller />
     </div>
   )
 }

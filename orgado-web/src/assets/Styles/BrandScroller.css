@@ -1,0 +1,94 @@
+/* Brand Scroller Container */
+.brand-scroller-container {
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    /* Light background similar to image */
+    display: flex;
+    align-items: center;
+}
+
+/* Scroll Track */
+.brand-scroller-track {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+.brand-scroller-track:hover {
+    animation-play-state: paused;
+}
+
+/* Individual Brand Item */
+.brand-item {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-item:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Placeholder Logo Styling (since we don't have images) */
+.brand-logo-placeholder {
+    font-family: 'Playfair Display', serif;
+    /* Elegant font */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.brand-logo-icon {
+    font-size: 2rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.brand-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+/* Animation Keyframes */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Scroll half because we duplicate list */
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .brand-scroller-container {
+        padding: 40px 0;
+    }
+
+    .brand-item {
+        padding: 0 30px;
+    }
+
+    .brand-logo-placeholder {
+        font-size: 1.2rem;
+    }
+}

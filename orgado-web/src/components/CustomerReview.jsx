@@ -1,13 +1,13 @@
 import React from 'react';
 import '../assets/Styles/CustomerReview.css';
 import { FaStar, FaGooglePlay, FaApple } from 'react-icons/fa';
-// Using a placeholder image for the user if not available
-import userImg from '../assets/images/browse-cat/image1.png'; // Fallback
+
+import userImg from '../assets/images/browse-cat/image1.png';       
 
 const CustomerReview = () => {
     return (
         <div className="customer-review-wrapper">
-            {/* Review Card */}
+            
             <div className="customer-review-card">
                 <div className="reviewer-img">
                     <img src={userImg} alt="Sagor Omi" />
@@ -21,8 +21,8 @@ const CustomerReview = () => {
                 </div>
             </div>
 
-            {/* App Download Card */}
-            <div className="app-download-card">
+            
+            <div className="app-download-card"> 
                 <div className="app-download-content">
                     <h5>Download the App</h5>
                     <p>Make your life easier</p>
