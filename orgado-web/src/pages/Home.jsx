@@ -9,6 +9,7 @@ import BrowseCatg from '../components/BrowseCatg'
 import FlashSaleSection from '../components/FlashSaleSection'
 import FeaturedSection from '../components/FeaturedSection'
 import BrandScroller from '../components/BrandScroller'
+import NewsInsight from '../components/NewsInsight'
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <FlashSaleSection />
       <FeaturedSection />
       <BrandScroller />
+      <NewsInsight />
     </div>
   )
 }
