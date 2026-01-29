@@ -3,8 +3,6 @@ import '../assets/Styles/CustomerReview.css';
 import { FaStar, FaGooglePlay, FaApple } from 'react-icons/fa';
 import userImg1 from '../assets/images/review-img/person-1.png'
 import userImg2 from '../assets/images/review-img/person-2.png'
-
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
