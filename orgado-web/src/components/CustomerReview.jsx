@@ -1,8 +1,10 @@
 import React from 'react';
 import '../assets/Styles/CustomerReview.css';
 import { FaStar, FaGooglePlay, FaApple } from 'react-icons/fa';
+import userImg1 from '../assets/images/review-img/person-1.png'
+import userImg2 from '../assets/images/review-img/person-2.png'
 
-import userImg from '../assets/images/browse-cat/image1.png';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -23,7 +25,7 @@ const reviews = [
         name: "Jane Smith",
         review: "fast delivery and great packaging. The vegetables were fresh and the app is very easy to use.",
         rating: 4,
-        img: userImg3
+        // img: userImg3
     },
 ]
 
