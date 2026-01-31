@@ -303,10 +303,12 @@
     padding: 0 40px 0 20px !important;
     
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    
   }
   
   .search-box input {
     width: 100% !important;
+    
   }
 }
 

@@ -234,8 +234,10 @@ const Header = () => {
                 </div>
 
                 <div className="icon-box position-relative cart-icon">
-                  <i className="bi bi-bag"></i>
-                  <span className="badge">0</span>
+                  <Link to='/Cart'>
+                    <i className="bi bi-bag"></i>
+                    <span className="badge">0</span>
+                  </Link>
                 </div>
 
                 <div className="icon-box position-relative wishlist-icon">
@@ -260,7 +262,7 @@ const Header = () => {
         </nav>
 
         {/* search row < 576px) */}
-        <div className="container-fluid d-block d-sm-none pb-3 px-3 bg-white">
+        <div className="container-fluid d-block d-sm-none pb-3 px-3 bg-white mt-3">
           <div className="search-box position-relative w-100 m-0 ">
             <input
               type="text"

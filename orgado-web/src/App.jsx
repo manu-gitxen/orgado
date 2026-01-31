@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import UserAccount from "./pages/UserAccount";
 import { Routes, Route } from "react-router-dom";
+import CartPage from"./components/CartPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/UserAccount" element={<UserAccount />} />
+        <Route path="/Cart" element={<CartPage />} />
       </Routes>
       <Footer />
     </>

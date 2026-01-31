@@ -1,12 +1,13 @@
 import React from 'react';
 import '../assets/Styles/FeaturedProducts.css';
 import { FaStar, FaArrowRight } from 'react-icons/fa';
-
+import AddToCartButton from './AddToCartButton';
 
 import prod1 from '../assets/images/trending-products/trendbeans.jpg';
 import prod2 from '../assets/images/trending-products/trendchips.jpg';
 import prod3 from '../assets/images/trending-products/trendmug.jpg';
 import potatoImg from '../assets/images/flash-sale/potato.png';
+
 
 const FeaturedProducts = () => {
 

@@ -3,17 +3,13 @@ import { CartContext } from '../context/CartContext';
 import { FaTrash } from 'react-icons/fa';
 
 const CartPage = () => {
-  // 1. Get the cart data from the "Tank"
   const { cartItems, setCartItems } = useContext(CartContext);
 
-  // 2. Logic to remove an item
+  
   const handleRemove = (id) => {
     const newCart = cartItems.filter((item) => item.id !== id);
     setCartItems(newCart);
   };
-
-  // 3. Logic to calculate Total Price
-  // We clean the price string (remove '$') and multiply by quantity
   const totalPrice = cartItems.reduce((total, item) => {
     const priceNumber = parseFloat(item.price.replace('$', ''));
     return total + priceNumber * (item.qty || 1);
@@ -27,7 +23,7 @@ const CartPage = () => {
     <div className="container mt-5">
       <h2 className="mb-4">Your Shopping Cart</h2>
       <div className="row">
-        {/* Left Side: Product List */}
+
         <div className="col-md-8">
           {cartItems.map((item, index) => (
             <div key={index} className="card mb-3 shadow-sm">
@@ -61,7 +57,6 @@ const CartPage = () => {
           ))}
         </div>
 
-        {/* Right Side: Total & Checkout */}
         <div className="col-md-4">
           <div className="card p-4 shadow-sm bg-light">
             <h4>Order Summary</h4>

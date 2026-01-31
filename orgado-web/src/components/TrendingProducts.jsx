@@ -8,6 +8,8 @@ import chips from "../assets/images/trending-products/trendchips.jpg";
 import mug from "../assets/images/trending-products/trendmug.jpg";
 import artisan from "../assets/images/trending-products/trendkoffe.jpg";
 import sticker from "../assets/images/trending-products/trendsticker.jpg";
+import AddToCartButton from './AddToCartButton';
+import AddToWishList from "./AddToWishList";
 
 const defaultTrendingProducts = [
   { id: 1, title: "Premium Broad bean", price: "$40.00", imgsrc: bean, qty: 1 },
@@ -221,6 +223,10 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
                           Qty <span className="qty-s">--</span>
                         </button>
                         <span className="quantity">{trendProduct.qty}</span>
+                      </div>
+                      <div className="d-flex">
+                        <AddToCartButton product={trendProduct} />
+                        <AddToWishList product={trendProduct} />
                       </div>
                     </div>
                   </div>
