@@ -85,14 +85,18 @@ const Header = () => {
             <div className="d-flex d-lg-none align-items-center gap-2">
               {/* wishlist on < 992px */}
               <div className="icon-box position-relative">
+                <Link to='/Wishlist'>
                 <i className="bi bi-heart"></i>
                 <span className="badge">0</span>
+                </Link>
               </div>
 
               {/* cart on <992px */}
               <div className="icon-box position-relative">
+                <Link to='/Cart'>
                 <i className="bi bi-bag"></i>
                 <span className="badge">0</span>
+                </Link>
               </div>
 
               {/*toggle menu */}
