@@ -17,7 +17,11 @@ const Login = () => {
             localStorage.setItem("user", JSON.stringify({ email }));
             window.dispatchEvent(new Event("storage"));
 
-            navigate("/");
+            if (location.state?.showCartAccessWarning) {
+                navigate("/Cart");
+            } else {
+                navigate("/");
+            }
         } else {
             alert("Please enter email and password");
         }
