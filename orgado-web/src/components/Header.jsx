@@ -93,10 +93,16 @@ const Header = () => {
 
               {/* cart on <992px */}
               <div className="icon-box position-relative">
-                <Link to='/Cart'>
-                <i className="bi bi-bag"></i>
-                <span className="badge">0</span>
-                </Link>
+                 { isLogin ? 
+                  <Link to='/Cart' className="icon-box">
+                    <i className="bi bi-bag"></i>
+                    <span className="badge">0</span>
+                  </Link> 
+                  : <Link to='/Login' className="icon-box">
+                    <i className="bi bi-bag"></i>
+                  </Link>
+                  
+                  }
               </div>
 
               {/*toggle menu */}
@@ -238,10 +244,17 @@ const Header = () => {
                 </div>
 
                 <div className="icon-box position-relative cart-icon">
-                  <Link to='/Cart'>
+                  { isLogin ? 
+                  <Link to='/Cart' className="icon-box">
                     <i className="bi bi-bag"></i>
                     <span className="badge">0</span>
+                  </Link> 
+                  : <Link to='/Login' className="icon-box">
+                    <i className="bi bi-bag"></i>
+
                   </Link>
+                  
+                  }
                 </div>
 
                 <div className="icon-box position-relative wishlist-icon">
