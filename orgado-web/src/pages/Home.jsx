@@ -10,6 +10,7 @@ import FlashSaleSection from '../components/FlashSaleSection'
 import FeaturedSection from '../components/FeaturedSection'
 import BrandScroller from '../components/BrandScroller'
 import NewsInsight from '../components/NewsInsight'
+import { LoginWarnModal } from '../components/LoginWarnModal'
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
       <FeaturedSection />
       <BrandScroller />
       <NewsInsight />
+      <LoginWarnModal/>
     </div>
   )
 }
