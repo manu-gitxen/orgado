@@ -86,23 +86,23 @@ const Header = () => {
               {/* wishlist on < 992px */}
               <div className="icon-box position-relative">
                 <Link to='/Wishlist'>
-                <i className="bi bi-heart"></i>
-                <span className="badge">0</span>
+                  <i className="bi bi-heart"></i>
+                  <span className="badge">0</span>
                 </Link>
               </div>
 
               {/* cart on <992px */}
               <div className="icon-box position-relative">
-                 { isLogin ? 
+                {isLogin ?
                   <Link to='/Cart' className="icon-box">
                     <i className="bi bi-bag"></i>
                     <span className="badge">0</span>
-                  </Link> 
-                  : <Link to='/Login' className="icon-box">
+                  </Link>
+                  : <Link to='/Login' state={{ showCartAccessWarning: true }} className="icon-box">
                     <i className="bi bi-bag"></i>
                   </Link>
-                  
-                  }
+
+                }
               </div>
 
               {/*toggle menu */}
@@ -244,16 +244,15 @@ const Header = () => {
                 </div>
 
                 <div className="icon-box position-relative cart-icon">
-                  { isLogin ? 
-                  <Link to='/Cart' className="icon-box">
-                    <i className="bi bi-bag"></i>
-                    <span className="badge">0</span>
-                  </Link> 
-                  : <Link to='/Login' className="icon-box">
-                    <i className="bi bi-bag"></i>
+                  {isLogin ?
+                    <Link to='/Cart' className="icon-box">
+                      <i className="bi bi-bag"></i>
+                      <span className="badge">0</span>
+                    </Link>
+                    : <Link to='/Login' state={{ showCartAccessWarning: true }} className="icon-box">
+                      <i className="bi bi-bag"></i>
+                    </Link>
 
-                  </Link>
-                  
                   }
                 </div>
 

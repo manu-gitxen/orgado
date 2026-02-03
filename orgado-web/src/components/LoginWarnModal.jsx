@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const LoginWarnModal = ({ isOpen, onClose }) => {
+export const LoginWarnModal = ({ isOpen, onClose, hideLoginButton }) => {
     const navigate = useNavigate();
 
     if (!isOpen) return null;
@@ -22,16 +22,18 @@ export const LoginWarnModal = ({ isOpen, onClose }) => {
                             <button type="button" className="btn btn-secondary" onClick={onClose}>
                                 Close
                             </button>
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={() => {
-                                    onClose();
-                                    navigate('/login');
-                                }}
-                            >
-                                Login
-                            </button>
+                            {!hideLoginButton && (
+                                <button
+                                    type="button"
+                                    className="btn btn-primary"
+                                    onClick={() => {
+                                        onClose();
+                                        navigate('/login');
+                                    }}
+                                >
+                                    Login
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
