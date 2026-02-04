@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import UserAccount from "./pages/UserAccount";
 import { Routes, Route } from "react-router-dom";
-import CartPage from"./components/CartPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
