@@ -3,7 +3,6 @@ import '../assets/Styles/BlogGrid.css';
 import { FaUser, FaRegClock, FaArrowRight } from 'react-icons/fa';
 
 const BlogGrid = () => {
-    // Extended dummy data
     const blogItems = [
         {
             id: 1,
