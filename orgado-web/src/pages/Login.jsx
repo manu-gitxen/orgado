@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FiMail, FiLock, FiLogIn } from "react-icons/fi";
+import { FiMail, FiLock, FiLogIn, FiUser } from "react-icons/fi";
 import Header from "../components/Header";
 import "../assets/Styles/Login.css";
 import { LoginWarnModal } from "../components/LoginWarnModal";
@@ -8,6 +8,8 @@ import { LoginWarnModal } from "../components/LoginWarnModal";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [showSignup, setShowSignup] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -47,6 +49,33 @@ const Login = () => {
                     <p className="login-subtitle">Please sign in to continue</p>
 
                     <form onSubmit={handleLogin}>
+                        {showSignup === true ? (
+                            <div className="form-group">
+                                <label className="form-label" htmlFor="name">Name</label>
+                                <div className="form-input-wrapper">
+                                    <FiUser className="input-icon" />
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        className="form-input"
+                                        placeholder="Enter your name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
+
+
+
+
+
+
+
                         <div className="form-group">
                             <label className="form-label" htmlFor="email">Email Address</label>
                             <div className="form-input-wrapper">
@@ -97,8 +126,13 @@ const Login = () => {
                     </div>
 
                     <div className="signup-link-wrapper">
-                        Don't have an account?
-                        <Link to="/signup" className="signup-link">Sign Up</Link>
+                        {showSignup ? "Already have an account?" : "Don't have an account?"}
+                        <a href="#" className="signup-link" onClick={(e) => {
+                            e.preventDefault();
+                            setShowSignup(!showSignup);
+                        }}>
+                            {showSignup ? " Login" : " Sign Up"}
+                        </a>
                     </div>
                 </div>
             </div>
