@@ -173,18 +173,23 @@ const Header = () => {
                   <ul className="dropdown-menu">
                     <li>
                       <a className="dropdown-item" href="#" onClick={closeNav}>
-                        Shop Grid
+                        Listed Products
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
-                        Shop List
-                      </a>
+                       <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
+                        Wishlist
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
-                        Product Details
-                      </a>
+                      <Link className="dropdown-item" to="/Cart" onClick={closeNav}>
+                        Cart
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/Cart" onClick={closeNav}>
+                        Checkout
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -210,18 +215,28 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/Cart" onClick={closeNav}>
-                        Cart
+                      <Link className="dropdown-item" to="/Team" onClick={closeNav}>
+                        Team
                       </Link>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#" onClick={closeNav}>
-                        Checkout
+                        Register
                       </a>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
-                        Wishlist
+                      <Link className="dropdown-item" to="/Login" onClick={closeNav}>
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/FAQ" onClick={closeNav}>
+                        FAQ
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/PrivacyPolicy" onClick={closeNav}>
+                        Privacy Policy
                       </Link>
                     </li>
                   </ul>
