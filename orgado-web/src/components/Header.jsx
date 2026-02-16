@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import homeLogo from "../assets/logo/logo2.png";
 import "../assets/Styles/Header.css";
 import { FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { WishlistContext } from "../context/WishlistContext";
+import { CartContext } from "../context/CartContext";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
+  const { wishlistItems } = useContext(WishlistContext);
+  const { cartItems } = useContext(CartContext);
 
   const toggleNav = () => setNavOpen(!navOpen);
   const closeNav = () => {
@@ -85,9 +89,9 @@ const Header = () => {
             <div className="d-flex d-lg-none align-items-center gap-2">
               {/* wishlist on < 992px */}
               <div className="icon-box position-relative">
-                <Link to='/Wishlist' className="text-decoration-none icon-box p-0 m-0">
+                <Link to='/wishlist' className="text-decoration-none icon-box p-0 m-0">
                   <i className="bi bi-heart "></i>
-                  <span className="badge">0</span>
+                  <span className="badge">{wishlistItems.length}</span>
                 </Link>
               </div>
 
@@ -96,7 +100,7 @@ const Header = () => {
                 {isLogin ?
                   <Link to='/Cart' className="icon-box">
                     <i className="bi bi-bag"></i>
-                    <span className="badge">0</span>
+                    <span className="badge">{cartItems.length}</span>
                   </Link>
                   : <Link to='/Login' state={{ showCartAccessWarning: true }} className="icon-box">
                     <i className="bi bi-bag"></i>
@@ -206,14 +210,19 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/Cart" onClick={closeNav}>
                         Cart
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#" onClick={closeNav}>
                         Checkout
                       </a>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
+                        Wishlist
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -247,7 +256,7 @@ const Header = () => {
                   {isLogin ?
                     <Link to='/Cart' className="icon-box">
                       <i className="bi bi-bag"></i>
-                      <span className="badge">0</span>
+                      <span className="badge">{cartItems.length}</span>
                     </Link>
                     : <Link to='/Login' state={{ showCartAccessWarning: true }} className="icon-box">
                       <i className="bi bi-bag"></i>
@@ -257,8 +266,10 @@ const Header = () => {
                 </div>
 
                 <div className="icon-box position-relative wishlist-icon">
-                  <i className="bi bi-heart"></i>
-                  <span className="badge">0</span>
+                  <Link to='/wishlist' className="icon-box">
+                    <i className="bi bi-heart"></i>
+                    <span className="badge">{wishlistItems.length}</span>
+                  </Link>
                 </div>
 
                 <div className="icon-box user-icon">
