@@ -10,9 +10,9 @@
     box-shadow: none;
 }
 
-.click-dot{
+.click-dot {
     color: #ffffff;
-    
+
 }
 
 .trending-btn {
@@ -69,33 +69,89 @@
     color: #6aa84f;
 }
 
-.trend-product-card button {
+
+.trend-product-card .qty-selector {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.trend-product-card .qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: #6aa84f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.trend-product-card .qty-btn:hover {
+    background-color: #6aa84f;
+    color: white;
+}
+
+.trend-product-card .qty-input {
+    width: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.trend-product-card .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.trend-product-card .add-cart-btn {
     background-color: #6aa84f;
     color: white;
     border: none;
-    transition: all 0.5s;
-    border-radius: 5px;
-
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.trend-product-card button .qty-s {
-    color: red;
-
-
+.trend-product-card .add-cart-btn:hover {
+    background-color: #5a9242;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(106, 168, 79, 0.2);
 }
 
-.trend-product-card button:hover {
-    background-color: #e5e5e5;
-    color: #1a1a1a;
-}
-
-.trend-product-card .quantity {
-    background-color: #e5e5e5;
-    padding: 0px 10px;
+.trend-product-card .wishlist-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e9ecef;
+    background-color: white;
     color: #6aa84f;
-    border: 1px solid #6aa84f;
-    font-weight: 600;
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.trend-product-card .wishlist-btn:hover {
+    border-color: #6aa84f;
+    color: #6aa84f;
+    background-color: #f8f9fa;
 }
 
 .trend-product-card a {
@@ -115,21 +171,21 @@
   overflow-y: hidden;   
   overflow-x: auto;
  } */
-  .horizontal-scroll::-webkit-scrollbar {
-  height: 8px;
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
 }
 
 .horizontal-scroll::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
 .horizontal-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #6aa84f, #ffb347);
-  border-radius: 10px;
-  transition: background 0.3s ease;
+    background: linear-gradient(90deg, #6aa84f, #ffb347);
+    border-radius: 10px;
+    transition: background 0.3s ease;
 }
 
 .horizontal-scroll::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
 }

@@ -3,7 +3,7 @@ import { CartContext } from '../context/CartContext';
 import { FaShoppingCart } from "react-icons/fa";
 
 
-const AddToCartButton = ({ product }) => {
+const AddToCartButton = ({ product, className }) => {
   const { cartItems, setCartItems } = useContext(CartContext);
 
   const handleAddToCart = () => {
@@ -18,8 +18,8 @@ const AddToCartButton = ({ product }) => {
   };
 
   return (
-    <button onClick={handleAddToCart} className="btn btn-primary">
-        <FaShoppingCart />
+    <button onClick={handleAddToCart} className={className ? className : "btn btn-primary"}>
+      <FaShoppingCart />
     </button>
   );
 };

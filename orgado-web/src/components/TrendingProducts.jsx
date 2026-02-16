@@ -3,6 +3,7 @@ import trendbnr from "../assets/images/banner-imgs/trendingbnr-1.jpg";
 import "../assets/Styles/TrendingProducts.css";
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { FaPlus, FaMinus } from "react-icons/fa";
 import bean from "../assets/images/trending-products/trendbeans.jpg";
 import chips from "../assets/images/trending-products/trendchips.jpg";
 import mug from "../assets/images/trending-products/trendmug.jpg";
@@ -21,9 +22,9 @@ const defaultTrendingProducts = [
 
 
 const TrendingProducts = ({ title, sidebarContent, productList, disableScroll }) => {
-  
+
   const [activeTab, setActiveTab] = useState("view-all");
-  
+
   const [items, setItems] = useState(productList || defaultTrendingProducts);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
     );
     setItems(updateditem);
   };
-  
+
   const handleDecrease = (id) => () => {
     const updatedItems = items.map((item) =>
       item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
@@ -49,38 +50,38 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
 
   return (
     <div>
-      <div className="container" style={{ marginTop: "160px"}}>
+      <div className="container" style={{ marginTop: "160px" }}>
         <div className="row">
-          
-          
+
+
           <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
             {sidebarContent ? (
-               sidebarContent 
+              sidebarContent
             ) : (
-               <a href="/">
-               <div className="trending-banner position-relative mb-5">
-                 <div className="w-img">
-                   <img
-                     src={trendbnr}
-                     alt=""
-                     className="rounded-4"
-                     style={{ width: "100%", display: "block" }}
-                   />
-                 </div>
- 
-                 <div
-                   className="trending-banner-text position-absolute"
-                   style={{ top: "30px", left: "30px", zIndex: 2 }}
-                 >
-                   <h5 style={{ color: "white", fontWeight: "400", marginBottom: "5px" }}>
-                     Organic
-                   </h5>
-                   <h3 style={{ color: "white", fontWeight: "700", fontSize: "32px" }}>
-                     Fresh Masala
-                   </h3>
-                 </div>
-               </div>
-             </a>
+              <a href="/">
+                <div className="trending-banner position-relative mb-5">
+                  <div className="w-img">
+                    <img
+                      src={trendbnr}
+                      alt=""
+                      className="rounded-4"
+                      style={{ width: "100%", display: "block" }}
+                    />
+                  </div>
+
+                  <div
+                    className="trending-banner-text position-absolute"
+                    style={{ top: "30px", left: "30px", zIndex: 2 }}
+                  >
+                    <h5 style={{ color: "white", fontWeight: "400", marginBottom: "5px" }}>
+                      Organic
+                    </h5>
+                    <h3 style={{ color: "white", fontWeight: "700", fontSize: "32px" }}>
+                      Fresh Masala
+                    </h3>
+                  </div>
+                </div>
+              </a>
             )}
           </div>
 
@@ -161,7 +162,7 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
                           )}
                           Best Sale
                         </button>
-                        
+
                         <button
                           className={`nav-link border-0 bg-transparent p-0 ${activeTab === "trending"
                             ? "active-tab"
@@ -215,18 +216,18 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
                         <h5>{trendProduct.price}</h5>
                       </a>
                       <span>*****</span>
-                      <div className="d-flex align-items-center gap-2 ">
-                        <button onClick={handlechange(trendProduct.id)}>
-                          Qty +
+                      <div className="qty-selector">
+                        <button className="qty-btn" onClick={handleDecrease(trendProduct.id)}>
+                          <FaMinus size={10} />
                         </button>
-                        <button onClick={handleDecrease(trendProduct.id)}>
-                          Qty <span className="qty-s">--</span>
+                        <span className="qty-input">{trendProduct.qty}</span>
+                        <button className="qty-btn" onClick={handlechange(trendProduct.id)}>
+                          <FaPlus size={10} />
                         </button>
-                        <span className="quantity">{trendProduct.qty}</span>
                       </div>
-                      <div className="d-flex">
-                        <AddToCartButton product={trendProduct} />
-                        <AddToWishList product={trendProduct} />
+                      <div className="action-buttons">
+                        <AddToCartButton product={trendProduct} className="add-cart-btn" />
+                        <AddToWishList product={trendProduct} className="wishlist-btn" />
                       </div>
                     </div>
                   </div>
