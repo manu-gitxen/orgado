@@ -85,8 +85,8 @@ const Header = () => {
             <div className="d-flex d-lg-none align-items-center gap-2">
               {/* wishlist on < 992px */}
               <div className="icon-box position-relative">
-                <Link to='/Wishlist'>
-                  <i className="bi bi-heart"></i>
+                <Link to='/Wishlist' className="text-decoration-none icon-box p-0 m-0">
+                  <i className="bi bi-heart "></i>
                   <span className="badge">0</span>
                 </Link>
               </div>
