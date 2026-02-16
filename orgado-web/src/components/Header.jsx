@@ -177,7 +177,7 @@ const Header = () => {
                       </a>
                     </li>
                     <li>
-                       <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
                         Wishlist
                       </Link>
                     </li>
@@ -210,9 +210,9 @@ const Header = () => {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/about" onClick={closeNav}>
                         About Us
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/Team" onClick={closeNav}>
