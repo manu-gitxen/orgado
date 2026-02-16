@@ -14,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 import CartPage from "./pages/CartPage";
 import Wishlist from "./pages/Wishlist";
 import AboutUs from "./pages/AboutUs";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Cart" element={<CartPage />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </>

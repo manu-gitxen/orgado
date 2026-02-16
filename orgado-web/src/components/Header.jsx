@@ -244,9 +244,9 @@ const Header = () => {
 
                 {/*blog contact and track order nav links  */}
                 <li className="nav-item">
-                  <a className="nav-link dropdown-toggle" href="#">
+                  <Link className="nav-link dropdown-toggle" to="/blog">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link dropdown-toggle" to="/contact">
