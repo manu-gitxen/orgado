@@ -45,8 +45,8 @@ const Login = () => {
             <Header />
             <div className="login-container">
                 <div className="login-card">
-                    <h2 className="login-title">Welcome Back</h2>
-                    <p className="login-subtitle">Please sign in to continue</p>
+                    <h2 className="login-title">{showSignup ? "Create Account" : "Welcome Back"}</h2>
+                    <p className="login-subtitle">{showSignup ? "Sign up to get started" : "Please sign in to continue"}</p>
 
                     <form onSubmit={handleLogin}>
                         {showSignup === true ? (
@@ -113,11 +113,11 @@ const Login = () => {
                                 <input type="checkbox" />
                                 <span>Remember me</span>
                             </label>
-                            <a href="#" className="forgot-password">Forgot Password?</a>
+                            <a href="#" className="forgot-password" style={{ display: showSignup ? "none" : "block" }}>Forgot Password?</a>
                         </div>
 
                         <button type="submit" className="login-btn">
-                            Login <FiLogIn />
+                            {showSignup ? "Sign Up" : "Login"} <FiLogIn />
                         </button>
                     </form>
 
