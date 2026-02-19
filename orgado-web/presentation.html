@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Orgado Web Application Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/dracula.min.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/monokai.min.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+        <section data-markdown>
+          <textarea data-template>
+            # Orgado 
+            ### Web Application Presentation
+            
+            <small>Created by Antigravity</small>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+                ## Introduction
+                **Orgado** is a modern, responsive e-commerce web application designed for selling organic products. 
+                
+                It features a clean, user-friendly interface with a focus on visual appeal and ease of navigation.
+            </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+                ## Tech Stack
+                - **Frontend**: React (v18+)
+                - **Build Tool**: Vite
+                - **Styling**: Bootstrap 5, Custom CSS
+                - **Icons**: React Icons
+                - **Routing**: React Router DOM (v6)
+                - **State**: React Context API
+                - **Sliders**: Slick Carousel
+            </textarea>
+        </section>
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Key Features
+                    ### 1. User Authentication
+                    - **Login/Register**: Secure flows for user access.
+                    - **User Dashboard**: 'My Account' area for profile management.
+                    - **Conditional UI**: Dynamic Header state based on login status.
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### 2. Product Discovery
+                    - **Home Page**: Hero banners, Trending items, Flash Sales.
+                    - **Browse Categories**: Filter by product type.
+                    - **Listed Products**: Full catalog browsing.
+                    - **Search**: Responsive search bar functionality.
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                     ### 3. Shopping Experience
+                    - **Cart**: Add items, quantity adjustment, & totals.
+                    - **Wishlist**: Save items for later.
+                    - **Indicators**: Real-time badge counts in header.
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### 4. Content & Engagement
+                    - **Blog**: News & Recipes.
+                    - **Contact & About**: Brand information & support.
+                    - **Newsletter**: Subscription touchpoints.
+                </textarea>
+            </section>
+             <section data-markdown>
+                <textarea data-template>
+                    ### 5. Responsive Design
+                    - **Desktop**: Full navigation.
+                    - **Tablet**: Optimized grid layouts.
+                    - **Mobile**: Hamburger menu, bottom nav aesthetics.
+                </textarea>
+            </section>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+                ## Project Structure
+                - `src/components`: Reusable UI (Header, Footer, Cards).
+                - `src/pages`: Route-based views (Home, Login, Cart).
+                - `src/context`: Global state (Cart, Wishlist).
+                - `src/assets`: Images, icons, styles.
+            </textarea>
+        </section>
+
+         <section data-markdown>
+            <textarea data-template>
+                ## Future Improvements
+                - **Payments**: Stripe/PayPal integration.
+                - **Backend**: Real API connection.
+                - **Admin**: Dashboard for management.
+                - **Filters**: Advanced product filtering.
+            </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+                ## Thank You!
+                
+                Questions?
+            </textarea>
+        </section>
+
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [ RevealMarkdown, RevealHighlight ],
+        slideNumber: true,
+        hash: true,
+      });
+    </script>
+  </body>
+</html>

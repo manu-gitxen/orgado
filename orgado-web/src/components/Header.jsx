@@ -67,12 +67,12 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg py-3">
           <div className="container-fluid px-2 flex-wrap">
             {/* logo */}
-            <a
+            <Link
               className="navbar-brand d-flex align-items-center me-auto me-lg-0"
-              href="#"
+              to="/"
             >
               <img src={homeLogo} alt="Orgado" height="40" />
-            </a>
+            </Link>
 
             {/*  search box 576px and 991px */}
             <div className="d-none d-sm-block d-lg-none mx-auto">
@@ -261,11 +261,11 @@ const Header = () => {
                 {/* Login / My Account for mobile */}
                 <li className="nav-item d-block d-lg-none">
                   {isLogin ? (
-                    <Link className="nav-link" to="/UserAccount" onClick={closeNav}>
+                    <Link className="nav-link dropdown-toggle " to="/UserAccount" onClick={closeNav}>
                       My Account
                     </Link>
                   ) : (
-                    <Link className="nav-link" to="/Login" onClick={closeNav}>
+                    <Link className="nav-link dropdown-toggle" to="/Login" onClick={closeNav}>
                       Login
                     </Link>
                   )}
