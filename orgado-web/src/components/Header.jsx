@@ -172,9 +172,9 @@ const Header = () => {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="#" onClick={closeNav}>
+                      <Link to='/ListedProducts' className="dropdown-item" onClick={closeNav}>
                         Listed Products
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/wishlist" onClick={closeNav}>
@@ -257,6 +257,18 @@ const Header = () => {
                   <a className="nav-link dropdown-toggle" href="#">
                     Track Order
                   </a>
+                </li>
+                {/* Login / My Account for mobile */}
+                <li className="nav-item d-block d-lg-none">
+                  {isLogin ? (
+                    <Link className="nav-link" to="/UserAccount" onClick={closeNav}>
+                      My Account
+                    </Link>
+                  ) : (
+                    <Link className="nav-link" to="/Login" onClick={closeNav}>
+                      Login
+                    </Link>
+                  )}
                 </li>
               </ul>
 
