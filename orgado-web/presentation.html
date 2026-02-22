@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Orgado Web Application Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/dracula.min.css"
+        id="theme">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/monokai.min.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section data-markdown>
+                <textarea data-template>
+            # Orgado 
+            ### Fresh, Organic, Delivered to Your Door.
+            
+            <small>Project Presentation - 10th Batch (Tuesday 24th Feb)</small>
+          </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## What Orgado Does
+                **Orgado** is a modern, responsive e-commerce web application designed specifically for selling organic products. 
+                
+                It connects health-conscious consumers with high-quality, farm-fresh organic goods through a seamless and intuitive online shopping experience.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Key Features
+                - **User-friendly interface**: Clean, intuitive navigation and layout.
+                - **Product catalog**: Comprehensive listings with robust search and filters.
+                - **Secure payment gateway**: Safe and reliable checkout process.
+                - **Order tracking**: Keep customers updated on their purchases.
+                - **Responsive design**: Flawless experience across desktop, tablet, and mobile.
+            </textarea>
+            </section>
+
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                    ## Target Audience & USP
+                    ### Target Audience
+                    Health-conscious individuals, families seeking organic food, and eco-friendly consumers who value sustainability.
+                </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                    ### Unique Selling Proposition (USP)
+                    A curated selection of certified organic products presented in a blazing-fast, modern, and highly engaging user interface, making healthy living accessible and easy.
+                </textarea>
+                </section>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Tech Stack
+                ### Frontend: React.js
+                - **Build Tool**: Vite (for fast development & optimized builds)
+                - **Routing**: React Router DOM (Single Page Application navigation)
+                - **State Management**: React Context API
+                - **Styling**: Custom CSS, Bootstrap 5, React Icons
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Why React for E-commerce?
+                - **Fast and seamless UI updates**: React's Virtual DOM minimizes direct browser DOM manipulation, ensuring a snappy shopping experience.
+                - **Easy component reuse**: Product cards, buttons, and layout elements are built once and used everywhere, maintaining consistency.
+                - **Great for complex, data-driven interfaces**: Effortlessly handles dynamic filters, search results, and complex cart calculations.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Technologies Used & Why
+                - **React.js**: For interactive and dynamic User Interfaces.
+                - **Vite**: Provides lightning-fast HMR and optimized production builds.
+                - **React Router**: Enables smooth transitions between pages without reloading.
+                - **Context API**: Clean, built-in global state management without adding heavy third-party libraries.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Advantages of React
+                - **Enhanced User Experience**: Instant page transitions reduce bounce rates.
+                - **Performance**: High speed leads to better conversion rates, crucial for e-commerce.
+                - **Maintainability**: Component architecture makes future feature additions (like reviews or recommendations) much easier.
+                - **Rich Ecosystem**: Easy access to thousands of ready-to-use libraries.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## State Management
+                - **Global State (Context API)**: 
+                  - `CartContext`: Manages cart items, totals, and quantities globally.
+                  - `WishlistContext`: Manages a user's saved items.
+                - **Local State (`useState` & `useReducer`)**: 
+                  - Handled within specific components for form inputs, dropdowns, modal visibility, and local UI toggles.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## SEO Optimization Approach
+                - **Semantic HTML**: Using proper `<header>`, `<main>`, `<footer>`, and heading hierarchies correctly within React components.
+                - **Meta Tags Management**: Utilizing dynamically updated `<title>` and `<meta>` description tags for distinct pages.
+                - **Performance as SEO**: Ensuring fast First Contentful Paint (FCP) by optimizing assets, as page speed is a significant ranking factor.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                ## Responsiveness & Performance
+                **Responsiveness**
+                - Mobile-first approach using CSS Media Queries.
+                - Flexible layouts with CSS Flexbox and Grid.
+                - Responsive images and scalable SVG icons.
+
+                **Performance**
+                - Vite's optimized production bundling.
+                - React's efficient Virtual DOM updates.
+                - Lazy loading capabilities to load only what's necessary on the initial page visit.
+            </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                # Thank You!
+                
+                Any Questions?
+            </textarea>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [RevealMarkdown, RevealHighlight],
+            slideNumber: true,
+            hash: true,
+        });
+    </script>
+</body>
+
+</html>

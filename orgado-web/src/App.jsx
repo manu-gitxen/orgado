@@ -16,6 +16,7 @@ import Wishlist from "./pages/Wishlist";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import ListedProducts from "./pages/ListedProducts";
+import TrackOrder from "./pages/TrackOrder";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/ListedProducts" element={<ListedProducts />} />
+        <Route path="/track-order" element={<TrackOrder />} />
       </Routes>
       <Footer />
     </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/Styles/Hero.css';
+import { Link } from 'react-router-dom';
 
 
 import heroMainImage from '../assets/images/banner-imgs/banner-3.webp'; 
@@ -39,9 +40,11 @@ const Hero = () => {
               </p>
               
               <div className="hero-btn-group d-flex align-items-center gap-4">
+                <Link to="/ListedProducts">
                 <button className="btn btn-success rounded-pill px-5 py-3 fw-bold">
                   Shop Now
                 </button>
+                </Link>
                 
                 
                 <img src={curlyArrow} alt="" className="hero-curly-arrow" />

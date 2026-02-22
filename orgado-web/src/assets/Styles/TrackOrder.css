@@ -1,0 +1,98 @@
+.track-order-wrapper {
+  background-color: #f6f8fb;
+  min-height: 70vh;
+}
+
+
+
+.custom-input {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  background-color: #fff;
+  border-color: #198754;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
+}
+
+.track-btn {
+  transition: all 0.3s ease;
+}
+
+.track-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14px;
+  width: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 30px;
+  z-index: 2;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #94a3b8;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.active .timeline-icon {
+  background-color: #198754;
+  border-color: #198754;
+  color: #fff;
+}
+
+.timeline-item.current .timeline-icon {
+  background-color: #fff;
+  border-color: #198754;
+  color: #198754;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.2);
+}
+
+.timeline-content {
+  padding-left: 20px;
+}
+
+.tracking-result {
+  border: 1px solid rgba(0,0,0,0.05);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
