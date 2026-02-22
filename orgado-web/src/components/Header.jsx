@@ -187,7 +187,7 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/Cart" onClick={closeNav}>
+                      <Link className="dropdown-item" to="/checkout" onClick={closeNav}>
                         Checkout
                       </Link>
                     </li>

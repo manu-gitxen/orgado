@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 
 const CartPage = () => {
-  
+
   const { cartItems, setCartItems } = useContext(CartContext);
 
- 
+
   const handleRemove = (id) => {
     const newCart = cartItems.filter((item) => item.id !== id);
     setCartItems(newCart);
@@ -28,7 +29,7 @@ const CartPage = () => {
         <div className="container mt-5">
           <h2 className="mb-4">Your Shopping Cart</h2>
           <div className="row">
- 
+
             <div className="col-md-8">
               {cartItems.map((item, index) => (
                 <div key={index} className="card mb-3 shadow-sm">
@@ -62,7 +63,7 @@ const CartPage = () => {
               ))}
             </div>
 
-            
+
             <div className="col-md-4">
               <div className="card p-4 shadow-sm bg-light">
                 <h4>Order Summary</h4>
@@ -75,9 +76,9 @@ const CartPage = () => {
                   <span>Total Price:</span>
                   <strong className="text-success">${totalPrice.toFixed(2)}</strong>
                 </div>
-                <button className="btn btn-success w-100 py-2">
+                <Link to="/checkout" className="btn btn-success w-100 py-2">
                   Proceed to Checkout
-                </button>
+                </Link>
               </div>
             </div>
           </div>
