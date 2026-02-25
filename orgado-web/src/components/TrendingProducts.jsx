@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import trendbnr from "../assets/images/banner-imgs/trendingbnr-1.jpg";
 import "../assets/Styles/TrendingProducts.css";
-import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import bean from "../assets/images/trending-products/trendbeans.jpg";
@@ -26,6 +25,19 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
   const [activeTab, setActiveTab] = useState("view-all");
 
   const [items, setItems] = useState(productList || defaultTrendingProducts);
+
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      if (direction === "left") {
+        current.scrollBy({ left: -300, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: 300, behavior: "smooth" });
+      }
+    }
+  };
 
   useEffect(() => {
     if (productList) {
@@ -188,18 +200,18 @@ const TrendingProducts = ({ title, sidebarContent, productList, disableScroll })
                     </nav>
                   </div>
                   <div className="trending-navigation-buttons d-flex gap-2">
-                    <button className="trending-btn prev-btn">
+                    <button className="trending-btn prev-btn" onClick={() => scroll("left")}>
                       <BsChevronLeft size={15} />
                     </button>
 
-                    <button className="trending-btn next-btn">
+                    <button className="trending-btn next-btn" onClick={() => scroll("right")}>
                       <BsChevronRight size={15} />
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="product-trending-wrappe horizontal-scroll">
+            <div className="product-trending-wrappe horizontal-scroll" ref={scrollRef}>
               <div className={`row ${disableScroll ? "" : "flex-nowrap"}`}>
                 {items.map((trendProduct) => (
                   <div

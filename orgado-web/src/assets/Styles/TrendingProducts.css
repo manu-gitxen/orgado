@@ -163,7 +163,10 @@
     scroll-behavior: smooth;
     overflow-y: hidden;
     overflow-x: auto;
-
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* .product-trending-wrapper{
@@ -172,20 +175,5 @@
   overflow-x: auto;
  } */
 .horizontal-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.horizontal-scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.horizontal-scroll::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #6aa84f, #ffb347);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-}
-
-.horizontal-scroll::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    display: none;
 }
